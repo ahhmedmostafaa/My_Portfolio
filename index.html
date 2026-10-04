@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahmed Mostafa Hussein | SOC Analyst &amp; Cybersecurity Analyst</title>
 <meta name="description" content="Portfolio of Ahmed Mostafa Hussein, an entry-level SOC Analyst in Cairo. A network that detects and blocks attacks on its own, and how it was built.">
+<meta name="theme-color" content="#0f161c">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://ahhmedmostafaa.github.io/My_Portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ahmed Mostafa Hussein | SOC Analyst &amp; Cybersecurity Analyst">
+<meta property="og:description" content="A network that detects and blocks attacks on its own, and how I built it. Entry-level SOC Analyst based in Cairo.">
+<meta property="og:url" content="https://ahhmedmostafaa.github.io/My_Portfolio/">
+<meta property="og:image" content="https://ahhmedmostafaa.github.io/My_Portfolio/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ahhmedmostafaa.github.io/My_Portfolio/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ahmed Mostafa Hussein","jobTitle":"SOC Analyst","url":"https://ahhmedmostafaa.github.io/My_Portfolio/","image":"https://ahhmedmostafaa.github.io/My_Portfolio/profile.jpg","address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"sameAs":["https://www.linkedin.com/in/ahmedmostafahussein","https://github.com/ahhmedmostafaa"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,6 +35,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;z-index:10;text-decoration:none;font-weight:700}
+.skip:focus{top:8px}
 .brand{font-weight:800;color:var(--ink);text-decoration:none}
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
 nav ul a{color:var(--mute);text-decoration:none}
@@ -40,6 +55,8 @@ p{margin:0 0 14px;max-width:64ch}
 .btn{display:inline-block;padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--ink);color:var(--ink)}
 .btn.main{background:var(--ink);color:var(--bg)}
 .btn:hover{border-color:var(--accent)}
+.open{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:14px;font-weight:700;margin-bottom:18px}
+.open i{width:9px;height:9px;border-radius:50%;background:#2eb872;display:block}
 .facts{margin-top:22px;color:var(--mute);font-size:15px}
 .case{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .log{background:#13202b;color:#d9e4ec;border-radius:10px;font:13px/1.7 "JetBrains Mono",monospace;overflow:hidden}
@@ -54,6 +71,7 @@ p{margin:0 0 14px;max-width:64ch}
 .metrics div:last-child{border:0}
 .metrics strong{display:block;font-size:26px;line-height:1.1;font-weight:800;color:var(--accent)}
 .metrics span{font-size:13px;color:var(--mute);line-height:1.3;display:block;margin-top:4px}
+.note{font-size:15px;color:var(--mute);margin:0 0 18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:0}
 .chips li{font:13px "JetBrains Mono",monospace;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none;padding:0;margin:28px 0 0;counter-reset:s}
@@ -81,6 +99,7 @@ p{margin:0 0 14px;max-width:64ch}
 .certs small{color:var(--mute);font-size:14px;display:block}
 .certs em{font-style:normal;color:var(--mute);font-size:14px}
 .contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
@@ -118,6 +137,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </style>
 </head>
 <body id="top">
+<a class="skip" href="#lab">Skip to content</a>
 <nav><div class="wrap"><a class="brand" href="#top" aria-label="Ahmed Hussein, back to top">Ahmed Hussein</a>
 <ul class="links"><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
 <details class="menu"><summary aria-label="Open navigation menu"><svg class="i-bars" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><ul><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul></details></div></nav>
@@ -127,8 +147,9 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <div>
   <h1>Ahmed Mostafa Hussein</h1>
   <div class="role">SOC Analyst | Cybersecurity Analyst</div>
+  <div class="open"><i aria-hidden="true"></i>Open to work</div>
   <p>I build small networks, attack them with real tools, then teach the defenses to respond on their own.</p>
-  <p>I'm looking for a first SOC Analyst role, where I can do the same work on live alerts.</p>
+  <p>I'm open to entry-level SOC Analyst roles, where I can do the same work on live alerts.</p>
   <div class="btns">
    <a class="btn main" href="#lab">See my lab</a>
    <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -166,6 +187,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <div><strong>872 ms</strong><span>average time from attack to block</span></div>
   <div><strong>80,000</strong><span>labeled samples I captured myself</span></div>
  </div>
+ <p class="note">How it was tested: the classifier was evaluated on 8 attack categories, and the full system faced 240 live attacks in my own lab network, using real attack tools.</p>
  <ul class="chips"><li>Python</li><li>XGBoost</li><li>Scikit-learn</li><li>Scapy</li><li>Suricata</li><li>Zeek</li><li>pfSense</li><li>GNS3</li><li>VMware</li><li>Cisco IOS</li></ul>
  <p style="margin-top:20px"><a href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab">Read the full write-up and code on GitHub</a></p>
 </section>
@@ -252,7 +274,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 
 <section id="contact">
  <h2>Let's talk</h2>
- <p>I'm looking for a first SOC Analyst role. Email is the best way to reach me.</p>
+ <p>I'm open to work as an entry-level SOC Analyst. Email is the best way to reach me.</p>
  <div class="contact">
   <a class="btn main" href="mailto:a7medmostafa7777@gmail.com">a7medmostafa7777@gmail.com</a>
   <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein">LinkedIn</a>
@@ -262,7 +284,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <p class="facts">Languages: Arabic (native), English (proficient).</p>
 </section>
 </main>
-<footer class="site"><div class="wrap">&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</div></footer>
+<footer class="site"><div class="wrap foot"><span>&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</span><a href="#top">Back to top</a></div></footer>
 <script>document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").removeAttribute("open")})})</script>
 </body>
 </html>
