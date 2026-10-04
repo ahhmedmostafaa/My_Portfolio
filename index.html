@@ -59,6 +59,8 @@ p{margin:0 0 14px;max-width:64ch}
 :root[data-theme="dark"] .theme .i-sun{display:block}
 :root[data-theme="dark"] .theme .i-moon{display:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme]) .theme .i-sun{display:block}:root:not([data-theme]) .theme .i-moon{display:none}}
+.ic{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-right:8px;vertical-align:-3px;flex:none}
+.ext::after,.certs a::after{content:"";display:inline-block;width:12px;height:12px;margin-left:5px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat}
 .menu{display:none}
 .photo{width:100%;max-width:340px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:14px;border:1px solid var(--line);justify-self:end;align-self:center;display:block;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -200,7 +202,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  </div>
  <p class="note">How it was tested: the classifier was evaluated on 8 attack categories, and the full system faced 240 live attacks in my own lab network, using real attack tools.</p>
  <ul class="chips"><li>Python</li><li>XGBoost</li><li>Scikit-learn</li><li>Scapy</li><li>Suricata</li><li>Zeek</li><li>pfSense</li><li>GNS3</li><li>VMware</li><li>Cisco IOS</li></ul>
- <p style="margin-top:20px"><a href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab">Read the full write-up and code on GitHub</a></p>
+ <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab">Read the full write-up and code on GitHub</a></p>
 </section>
 
 <section id="approach">
@@ -280,17 +282,17 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <li><a href="https://github.com/ahhmedmostafaa/Airline-Reservation-System">Airline-Reservation-System</a><span>A Java Swing app backed by a SQL database.</span></li>
   <li><a href="https://github.com/ahhmedmostafaa/Bird-Game-Unity">Bird-Game-Unity</a><span>A Flappy Bird-style 2D game in Unity and C#.</span></li>
  </ul></details>
- <p><a href="https://github.com/ahhmedmostafaa?tab=repositories">See every repository on GitHub</a></p>
+ <p><a class="ext" href="https://github.com/ahhmedmostafaa?tab=repositories">See every repository on GitHub</a></p>
 </section>
 
 <section id="contact">
  <h2>Let's talk</h2>
  <p>I'm open to work as an entry-level SOC Analyst. Email is the best way to reach me.</p>
  <div class="contact">
-  <a class="btn main" href="mailto:a7medmostafa7777@gmail.com">a7medmostafa7777@gmail.com</a>
-  <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein">LinkedIn</a>
-  <a class="btn" href="https://github.com/ahhmedmostafaa">GitHub</a>
-  <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+  <a class="btn main" href="mailto:a7medmostafa7777@gmail.com"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>a7medmostafa7777@gmail.com</a>
+  <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+  <a class="btn" href="https://github.com/ahhmedmostafaa"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+  <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV</a>
  </div>
  <p class="facts">Languages: Arabic (native), English (proficient).</p>
 </section>
