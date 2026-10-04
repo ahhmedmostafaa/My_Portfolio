@@ -81,10 +81,12 @@ p{margin:0 0 14px;max-width:64ch}
 footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
- .photo{justify-self:start;width:168px;max-width:none;aspect-ratio:1/1;border-radius:50%;object-position:center 12%;order:-1}
+ .photo{justify-self:center;width:230px;max-width:none;aspect-ratio:1/1;border-radius:50%;object-position:center 12%;order:-1}
  nav .links{display:none}
  .menu{display:block}
- .menu summary{cursor:pointer;list-style:none;padding:6px 16px;border:1px solid var(--line);border-radius:6px;font-weight:700;font-size:15px;background:var(--panel)}
+ .menu summary{cursor:pointer;list-style:none;width:42px;height:38px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+ .menu .i-x,.menu[open] .i-bars{display:none}
+ .menu[open] .i-x{display:block}
  .menu summary::-webkit-details-marker{display:none}
  nav .menu ul{position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 12px;font-size:17px}
  nav .menu li a{display:block;padding:12px 0;border-top:1px solid var(--line);color:var(--ink)}
@@ -100,7 +102,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  section{padding-top:56px}
  .hero{padding-top:28px}
  h2{font-size:26px}
- .photo{width:140px}
+ .photo{width:200px}
  nav b{font-size:15px;flex:none}
  .btns .btn,.contact .btn{flex:1 1 auto;text-align:center;overflow-wrap:anywhere}
  .log{font-size:12px}
@@ -115,7 +117,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 <body>
 <nav><div class="wrap"><b>Ahmed Hussein</b>
 <ul class="links"><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
-<details class="menu"><summary>Menu</summary><ul><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul></details></div></nav>
+<details class="menu"><summary aria-label="Open navigation menu"><svg class="i-bars" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><ul><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul></details></div></nav>
 
 <main class="wrap">
 <div class="hero">
