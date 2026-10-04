@@ -15,6 +15,9 @@
 html{scroll-behavior:smooth}
 body{overflow-x:clip;margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Schibsted Grotesk",system-ui,sans-serif}
 a{color:var(--accent)}
+a,summary,button,.btn{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn:active{opacity:.8}
+nav a:active,.grp summary:active{color:var(--accent)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--alert);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
