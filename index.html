@@ -31,6 +31,7 @@ p{margin:0 0 14px;max-width:64ch}
 .lede{color:var(--mute);margin-bottom:28px}
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;padding-top:64px}
 .role{font-size:20px;color:var(--accent);font-weight:500;margin-bottom:18px}
+.menu{display:none}
 .photo{width:100%;max-width:340px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:14px;border:1px solid var(--line);justify-self:end;align-self:center;display:block;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-block;padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--ink);color:var(--ink)}
@@ -80,7 +81,14 @@ p{margin:0 0 14px;max-width:64ch}
 footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
- .photo{justify-self:start;max-width:320px;order:-1}
+ .photo{justify-self:start;width:168px;max-width:none;aspect-ratio:1/1;border-radius:50%;object-position:center 12%;order:-1}
+ nav .links{display:none}
+ .menu{display:block}
+ .menu summary{cursor:pointer;list-style:none;padding:6px 16px;border:1px solid var(--line);border-radius:6px;font-weight:700;font-size:15px;background:var(--panel)}
+ .menu summary::-webkit-details-marker{display:none}
+ nav .menu ul{position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 12px;font-size:17px}
+ nav .menu li a{display:block;padding:12px 0;border-top:1px solid var(--line);color:var(--ink)}
+ nav .menu li:first-child a{border-top:0}
  .metrics{grid-template-columns:1fr 1fr}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .steps{grid-template-columns:1fr 1fr}
  .path li,.plist li{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -92,10 +100,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  section{padding-top:56px}
  .hero{padding-top:28px}
  h2{font-size:26px}
- nav .wrap{gap:14px}
- nav ul{white-space:nowrap;gap:16px;font-size:15px}
- nav ul li.hide-sm{display:none}
- .photo{justify-self:stretch;aspect-ratio:1/1;object-position:center 14%;max-width:420px}
+ .photo{width:140px}
  nav b{font-size:15px;flex:none}
  .btns .btn,.contact .btn{flex:1 1 auto;text-align:center;overflow-wrap:anywhere}
  .log{font-size:12px}
@@ -109,7 +114,8 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </head>
 <body>
 <nav><div class="wrap"><b>Ahmed Hussein</b>
-<ul><li><a href="#lab">The lab</a></li><li class="hide-sm"><a href="#approach">Approach</a></li><li class="hide-sm"><a href="#path">Path</a></li><li class="hide-sm"><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<ul class="links"><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
+<details class="menu"><summary>Menu</summary><ul><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul></details></div></nav>
 
 <main class="wrap">
 <div class="hero">
@@ -252,5 +258,6 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </section>
 </main>
 <footer class="site"><div class="wrap">&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</div></footer>
+<script>document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").removeAttribute("open")})})</script>
 </body>
 </html>
