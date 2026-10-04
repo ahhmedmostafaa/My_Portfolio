@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed Mostafa Hussein | SOC Analyst &amp; Cybersecurity Analyst</title>
+<meta name="description" content="Portfolio of Ahmed Mostafa Hussein, an entry-level SOC Analyst in Cairo specializing in network defense, SIEM, IDS and incident response.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f7;--panel:#fff;--ink:#13202b;--mute:#52606d;--line:#d5dde4;--accent:#0b6b73;--alert:#b85c00;--logbg:#13202b;--logink:#d9e4ec}
+@media (prefers-color-scheme:dark){:root{--bg:#0f161c;--panel:#17212a;--ink:#e8eef3;--mute:#9aa9b6;--line:#26333f;--accent:#4fc3cc;--alert:#f0a050;--logbg:#0a1015;--logink:#d9e4ec}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Schibsted Grotesk",system-ui,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--alert);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font-weight:800}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{color:var(--mute);text-decoration:none}
+nav ul a:hover{color:var(--ink)}
+section{padding:72px 0 0}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.02;margin:0 0 16px;font-weight:800;letter-spacing:-.025em}
+h2{font-size:30px;margin:0 0 28px;font-weight:800;letter-spacing:-.015em}
+h3{font-size:19px;margin:0}
+p{margin:0 0 14px;max-width:68ch}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:72px}
+.role{font-size:20px;color:var(--accent);font-weight:500;margin-bottom:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--ink);color:var(--ink)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.log{background:var(--logbg);color:var(--logink);border-radius:10px;font:13px/1.7 "JetBrains Mono",monospace;overflow:hidden;box-shadow:0 18px 40px -22px rgba(0,0,0,.5)}
+.log header{padding:10px 16px;border-bottom:1px solid #2a3a47;color:#8fa3b3;display:flex;justify-content:space-between}
+.log ol{list-style:none;margin:0;padding:14px 16px}
+.log li{display:flex;gap:10px;padding:3px 0;opacity:0;animation:in .4s forwards}
+.log li:nth-child(1){animation-delay:.3s}.log li:nth-child(2){animation-delay:.9s}.log li:nth-child(3){animation-delay:1.5s}.log li:nth-child(4){animation-delay:2.1s}.log li:nth-child(5){animation-delay:2.7s}
+@keyframes in{to{opacity:1}}
+.tag{flex:none;min-width:58px;font-weight:500}
+.t-det{color:#7fd0d8}.t-warn{color:#f0a050}.t-blk{color:#8ee09a}
+.log footer{padding:10px 16px;border-top:1px solid #2a3a47;color:#8fa3b3;font-size:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:22px;color:var(--mute);font-size:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px}
+.proj-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;margin-bottom:12px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.metrics div{padding:16px;border-right:1px solid var(--line)}
+.metrics div:last-child{border:0}
+.metrics strong{display:block;font-size:26px;line-height:1.1;font-weight:800;color:var(--accent)}
+.metrics span{font-size:13px;color:var(--mute);line-height:1.3;display:block;margin-top:4px}
+ul.dots{padding-left:20px;margin:0 0 16px}
+ul.dots li{margin-bottom:8px;max-width:72ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:0}
+.chips li{font:13px "JetBrains Mono",monospace;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.grp{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+.grp summary{cursor:pointer;padding:16px 20px;font-weight:700;display:flex;justify-content:space-between;list-style:none}
+.grp summary::-webkit-details-marker{display:none}
+.grp summary::after{content:"+";font-weight:400;margin-left:12px}
+.grp[open] summary::after{content:"\2212"}
+.grp summary span{margin-left:auto;color:var(--mute);font-weight:400;font-size:14px}
+.plist{list-style:none;margin:0;padding:0 20px 8px}
+.plist li{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+.plist a{font-weight:500;overflow-wrap:anywhere}
+.plist span{color:var(--mute);font-size:15px}
+.job{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job time{color:var(--mute);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skills h3{margin-bottom:12px;font-size:17px}
+.certs{list-style:none;margin:0;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.certs li{display:grid;grid-template-columns:1fr 150px 70px;gap:12px;padding:14px 20px;border-top:1px solid var(--line);align-items:baseline}
+.certs li:first-child{border-top:0}
+.certs small{color:var(--mute);font-size:14px}
+.certs em{font-style:normal;color:var(--mute);font-size:14px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media (max-width:820px){
+ .hero{grid-template-columns:1fr;gap:36px}
+ .metrics{grid-template-columns:1fr 1fr}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .job,.plist li{grid-template-columns:1fr;gap:4px}
+ .skills{grid-template-columns:1fr}
+ .certs li{grid-template-columns:1fr auto}.certs li em{grid-column:1;grid-row:2}
+ nav ul{gap:14px;font-size:14px}nav ul li:nth-child(n+4){display:none}
+}
+@media (prefers-reduced-motion:reduce){.log li{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Ahmed Hussein</b>
+<ul><li><a href="#project">Project</a></li><li><a href="#projects">More</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#certificates">Certificates</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<main class="wrap">
+<div class="hero">
+ <div>
+  <h1>Ahmed Mostafa Hussein</h1>
+  <div class="role">SOC Analyst | Cybersecurity Analyst</div>
+  <p>I detect and stop network attacks. I build lab environments, study real attack traffic, and automate the response, from SIEM alerts and IDS signatures to firewall blocking.</p>
+  <p>I'm looking for an entry-level SOC Analyst role.</p>
+  <div class="btns">
+   <a class="btn main" href="#contact">Contact me</a>
+   <a class="btn" href="Ahmed_Hussein_CV.docx" download>Download CV</a>
+   <a class="btn" href="https://github.com/ahhmedmostafaa">GitHub</a>
+  </div>
+  <div class="facts"><span>Cairo, Egypt</span><span>B.Sc. Computer Science, 2026</span></div>
+ </div>
+ <aside class="log" aria-label="Example of how my lab's detection pipeline handles an attack">
+  <header><span>ai-cyber-lab / detection-flow</span><span>example</span></header>
+  <ol>
+   <li><span class="tag t-det">CAPTURE</span><span>Flow from attacker zone, 27 features extracted</span></li>
+   <li><span class="tag t-det">XGBOOST</span><span>Classified: port scan (Nmap)</span></li>
+   <li><span class="tag t-det">SURICATA</span><span>IDS signature match confirms</span></li>
+   <li><span class="tag t-warn">ESCALATE</span><span>Confidence tier: high</span></li>
+   <li><span class="tag t-blk">BLOCKED</span><span>pfSense rule added over SSH</span></li>
+  </ol>
+  <footer>Lab result: 240 live attacks, all mitigated, 872 ms average.</footer>
+ </aside>
+</div>
+
+<section id="about">
+ <h2>About</h2>
+ <p>I'm a cybersecurity graduate focused on Security Operations Center work, network defense, and cyber threat management. I have hands-on experience administering enterprise firewalls (Fortinet and Sophos) and a broad set of certifications in SOC analysis, ethical hacking, and endpoint security.</p>
+ <p>I work with SIEM platforms, intrusion detection systems, and network traffic analysis to spot anomalies early and reduce vulnerabilities. I want to bring solid incident response skills and a habit of continuous improvement to a security team.</p>
+</section>
+
+<section id="project">
+ <h2>Featured project</h2>
+ <article class="card">
+  <div class="proj-head"><h3>AI-Powered Cybersecurity Lab: Multi-Layer Network Defense System</h3>
+  <a href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab">View on GitHub</a></div>
+  <p>A fully automated network defense system that combines machine learning, intrusion detection, and automatic firewall mitigation, with no human intervention needed.</p>
+  <div class="metrics">
+   <div><strong>98.94%</strong><span>accuracy across 8 attack categories</span></div>
+   <div><strong>100%</strong><span>detection and mitigation in 240 live trials</span></div>
+   <div><strong>872 ms</strong><span>mean time to mitigation</span></div>
+   <div><strong>11,200</strong><span>samples per second (0.089 ms each)</span></div>
+  </div>
+  <ul class="dots">
+   <li>Built a realistic enterprise network in GNS3 and VMware: 4 LAN zones, an OSPF-routed Cisco backbone, VLAN segmentation, and a pfSense firewall.</li>
+   <li>Captured a custom 80,000-sample labeled dataset with Scapy, using real attack tools: Nmap, Hydra, Metasploit, Slowloris, and hping3.</li>
+   <li>Trained an XGBoost classifier and benchmarked it against Random Forest and Logistic Regression.</li>
+   <li>Built a 4-layer detection engine (XGBoost, Suricata IDS, Zeek, and rule-based heuristics) with a 3-tier confidence escalation framework.</li>
+   <li>Engineered 27 temporal, volumetric, and flag-based flow features, enabling real-time inline classification.</li>
+   <li>Implemented autonomous SSH-driven blocking on pfSense.</li>
+  </ul>
+  <ul class="chips"><li>Python</li><li>XGBoost</li><li>Scikit-learn</li><li>Scapy</li><li>Suricata</li><li>Zeek</li><li>pfSense</li><li>GNS3</li><li>VMware</li><li>Cisco IOS</li></ul>
+ </article>
+</section>
+
+<section id="projects">
+ <h2>More projects</h2>
+ <p>Coursework and personal builds across networking, AI, embedded systems and software. Every project is on my GitHub.</p>
+ <details class="grp" open><summary>Networking <span>3</span></summary><ul class="plist">
+  <li><a href="https://github.com/ahhmedmostafaa/Network-Multi-Protocol-Routing">Network-Multi-Protocol-Routing</a><span>OSPF, RIP and EIGRP integration with route redistribution and Frame Relay</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Wireless-Campus-Network">Wireless-Campus-Network</a><span>Multi-floor wireless network design with WPA2 and per-floor SSIDs</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Campus-Network-EtherChannel">Campus-Network-EtherChannel</a><span>Departmental VLANs with redundant EtherChannel links and port security</span></li>
+ </ul></details>
+ <details class="grp"><summary>AI, machine learning &amp; NLP <span>4</span></summary><ul class="plist">
+  <li><a href="https://github.com/ahhmedmostafaa/ML-California-Housing-Comparison">ML-California-Housing-Comparison</a><span>6 ML algorithms implemented from scratch and benchmarked against scikit-learn</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Shortest-Path-Finder">Shortest-Path-Finder</a><span>UCS vs A* search comparison with interactive graph visualization</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/NLP-Text-Summarization">NLP-Text-Summarization</a><span>Extractive text summarization using TF-IDF on CNN/Daily Mail</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Speech-Processing-Emotion-Transcription">Speech-Processing-Emotion-Transcription</a><span>Speech-to-text (Wav2Vec2) and emotion recognition (MFCC + SVM)</span></li>
+ </ul></details>
+ <details class="grp"><summary>Embedded systems &amp; IoT <span>2</span></summary><ul class="plist">
+  <li><a href="https://github.com/ahhmedmostafaa/IoT-Wifi-RC-Car">IoT-Wifi-RC-Car</a><span>WiFi/Bluetooth controlled car with obstacle sensing</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Embedded-Arduino-Project">Embedded-Arduino-Project</a><span>Smart door system: ultrasonic sensing, servo control, WiFi via ESP8266</span></li>
+ </ul></details>
+ <details class="grp"><summary>Applications &amp; software engineering <span>5</span></summary><ul class="plist">
+  <li><a href="https://github.com/ahhmedmostafaa/Banking-App-Flutter">Banking-App-Flutter</a><span>Cross-platform mobile banking UI built with Flutter</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Airline-Reservation-System">Airline-Reservation-System</a><span>Java Swing and SQL airline reservation system</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Bank-App-System-Design">Bank-App-System-Design</a><span>Full UML system analysis and design case study</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Image-Processing-WinForms">Image-Processing-WinForms</a><span>C# desktop app for pixel-level image processing</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Bird-Game-Unity">Bird-Game-Unity</a><span>Flappy Bird-style 2D game built in Unity/C#</span></li>
+ </ul></details>
+ <details class="grp"><summary>Data structures &amp; algorithms <span>5</span></summary><ul class="plist">
+  <li><a href="https://github.com/ahhmedmostafaa/Datastructures-Bank-Management">Datastructures-Bank-Management</a><span>Bank system: UML design and two linked-list implementations (OOP vs procedural)</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Algorithms-Analysis-Lab">Algorithms-Analysis-Lab</a><span>Sort and search algorithms with Big-O complexity analysis</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/OS-CPU-Scheduling-Simulator">OS-CPU-Scheduling-Simulator</a><span>Priority scheduling simulator with Gantt chart visualization</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Cpp-Math-Exercises">Cpp-Math-Exercises</a><span>Discrete math (logic, probability) and numerical interpolation methods</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Multimedia-Signal-Huffman-Fourier">Multimedia-Signal-Huffman-Fourier</a><span>Huffman compression and Fourier transform signal analysis</span></li>
+ </ul></details>
+</section>
+
+<section id="experience">
+ <h2>Experience &amp; education</h2>
+ <div class="card">
+  <div class="job"><time>Jun 2024 – Aug 2024</time><div>
+   <h3>Network Security Intern (Fortinet &amp; Sophos firewalls)</h3>
+   <p><a href="https://www.facebook.com/share/1CMoZfuiH7/">IT Gate Academy</a></p>
+   <ul class="dots"><li>Configured, deployed, and managed enterprise firewalls in Fortinet and Sophos environments.</li><li>Set up security policies, NAT rules, and VPN tunnels in labs to secure network perimeters.</li><li>Monitored firewall logs to find unauthorized access attempts and traffic anomalies.</li></ul></div></div>
+  <div class="job"><time>Jun 2023 – Aug 2023</time><div>
+   <h3>Network Engineering Intern (CCNA training)</h3>
+   <p><a href="https://www.facebook.com/share/1CMoZfuiH7/">IT Gate Academy</a></p>
+   <ul class="dots"><li>Learned routing, switching, and network infrastructure fundamentals.</li><li>Configured VLANs, OSPF, and static routing in lab environments.</li><li>Used Cisco Packet Tracer to design, simulate, and troubleshoot network topologies.</li></ul></div></div>
+  <div class="job"><time>Sep 2022 – May 2026</time><div>
+   <h3>Bachelor of Computer Science</h3>
+   <p>Modern Academy, Maadi, Cairo. Grade: 3.3/4.0 (Excellent). <a href="https://drive.google.com/file/d/1VX6HONWcqFzP0yOvpGByrXu9mtLCln3E/view?usp=drive_link">View document</a></p></div></div>
+ </div>
+</section>
+
+<section id="skills">
+ <h2>Skills</h2>
+ <div class="skills">
+  <div class="card"><h3>Core competencies</h3><ul class="chips"><li>SOC analysis</li><li>Incident response</li><li>Vulnerability assessment</li><li>Network defense</li><li>Ethical hacking</li></ul></div>
+  <div class="card"><h3>Tools</h3><ul class="chips"><li>SIEM</li><li>IDS</li><li>Wireshark</li><li>Suricata</li><li>Zeek</li><li>Metasploit</li><li>OpenVAS</li><li>Fortinet</li><li>Sophos</li><li>pfSense</li><li>Cisco</li></ul></div>
+  <div class="card"><h3>Systems &amp; scripting</h3><ul class="chips"><li>Linux administration</li><li>Kali Linux</li><li>Python automation</li><li>SQL</li></ul></div>
+ </div>
+ <p style="margin-top:22px;color:var(--mute)">Soft skills: analytical thinking, problem-solving under pressure, attention to detail, self-directed learning, teamwork, and technical documentation. Languages: Arabic (native), English (proficient).</p>
+</section>
+
+<section id="certificates">
+ <h2>Certificates</h2>
+ <ul class="certs">
+  <li><span>SOC Analyst Learning Path <small>LetsDefend</small></span><em>Aug 2026</em><a href="https://app.letsdefend.io//certificate/show/5f3e589a-b375-42b9-a256-f510c67b4900">Verify</a></li>
+  <li><span>Advanced Endpoint Investigations <small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-L2RJXZAWTZ">Verify</a></li>
+  <li><span>SOC Level 2 <small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-F8ORM8AM42">Verify</a></li>
+  <li><span>SOC Level 1 <small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-9YYGBKQJRH">Verify</a></li>
+  <li><span>Google Cybersecurity <small>Google / Coursera</small></span><em>Sep 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/YCCOMYTPOUQS">Verify</a></li>
+  <li><span>Ethical Hacking with Open Source Tools <small>IBM / Coursera</small></span><em>Oct 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/1852H9CKY6V4">Verify</a></li>
+  <li><span>Ethical Hacker <small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/c7c2f365-64bb-4826-9d46-55ed0864a469">Verify</a></li>
+  <li><span>Cyber Threat Management <small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/9e498662-28ca-4dea-8b04-efb3036081a0">Verify</a></li>
+  <li><span>Endpoint Security <small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/284d10cc-0aee-4233-a1a5-7c79e8979273">Verify</a></li>
+  <li><span>Network Defense <small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/5c632674-58a0-4408-89c2-14c7de02e6de">Verify</a></li>
+ </ul>
+</section>
+
+<section id="contact">
+ <h2>Contact</h2>
+ <p>I'm open to entry-level SOC Analyst opportunities. Email is the fastest way to reach me.</p>
+ <div class="contact">
+  <a class="btn main" href="mailto:a7medmostafa7777@gmail.com">a7medmostafa7777@gmail.com</a>
+  <a class="btn" href="tel:+201000240832">+20 100 024 0832</a>
+  <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein">LinkedIn</a>
+  <a class="btn" href="https://github.com/ahhmedmostafaa">GitHub</a>
+ </div>
+</section>
+</main>
+<footer class="site"><div class="wrap">&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</div></footer>
+</body>
+</html>
