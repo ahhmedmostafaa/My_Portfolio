@@ -91,10 +91,16 @@ p{margin:0 0 14px;max-width:64ch}
 .steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
 .steps li::before{content:counter(s);display:block;font:500 14px "JetBrains Mono",monospace;color:var(--accent);margin-bottom:8px}
 .steps p{font-size:15px;color:var(--mute);margin:0}
-.path{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
-.path li{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
-.path b{font:500 15px "JetBrains Mono",monospace;color:var(--accent)}
-.path p{margin:0}
+.path{list-style:none;margin:32px 0 0;padding:0}
+.path li{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);padding-bottom:30px}
+.path li:last-child{padding-bottom:0}
+.path li::before{content:"";position:absolute;left:76px;top:0;bottom:0;width:2px;background:var(--line)}
+.path li:first-child::before{top:14px}
+.path li:last-child::before{bottom:auto;height:14px}
+.path li::after{content:"";position:absolute;left:70px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.path li:last-child::after{box-shadow:0 0 0 4px var(--bg),0 0 0 7px color-mix(in srgb,var(--accent) 35%,transparent)}
+.path b{font:500 15px/28px "JetBrains Mono",monospace;color:var(--accent)}
+.path p{margin:0;padding-left:34px;max-width:68ch}
 .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:28px}
 .tools div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
 .tools h3{font-size:17px;margin-bottom:12px}
@@ -134,7 +140,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  nav .menu li:first-child a{border-top:0}
  .metrics{grid-template-columns:1fr 1fr}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .steps{grid-template-columns:1fr 1fr}
- .path li,.plist li{grid-template-columns:minmax(0,1fr);gap:4px}
+ .plist li{grid-template-columns:minmax(0,1fr);gap:4px}
  .certs li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}.certs li>span{flex:1 1 100%}
 }
 @media (max-width:600px){
@@ -144,6 +150,10 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .hero{padding-top:28px}
  h2{font-size:26px}
  .photo{width:200px}
+ .path li{grid-template-columns:54px minmax(0,1fr)}
+ .path li::before{left:54px}
+ .path li::after{left:48px}
+ .path p{padding-left:24px}
  .brand{font-size:15px;flex:none}
  .btns .btn,.contact .btn{flex:1 1 auto;text-align:center;overflow-wrap:anywhere}
  .log{font-size:12px}
@@ -230,7 +240,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <li><b>2022</b><p>Started my B.Sc. in Computer Science at Modern Academy, Cairo.</p></li>
   <li><b>2023</b><p>Learned networking first: CCNA training at <a href="https://www.facebook.com/share/1CMoZfuiH7/">IT Gate Academy</a>, with VLANs, OSPF and Packet Tracer labs.</p></li>
   <li><b>2024</b><p>Moved into security with a firewall internship at <a href="https://www.facebook.com/share/1CMoZfuiH7/">IT Gate Academy</a>: Fortinet and Sophos policies, NAT rules and VPN tunnels, plus firewall log reviews to spot unauthorized access.</p></li>
-  <li><b>2025</b><p>Added structured training: Google Cybersecurity, IBM ethical hacking, and five Cisco security credentials.</p></li>
+  <li><b>2025</b><p>Added structured training: Google Cybersecurity, IBM ethical hacking, and Cisco security credentials.</p></li>
   <li><b>2026</b><p>Graduated in Computer Science and completed hands-on training in SOC operations and threat investigation.</p></li>
  </ol>
 </section>
