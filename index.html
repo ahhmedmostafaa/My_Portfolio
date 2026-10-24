@@ -135,9 +135,11 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .menu .i-x,.menu[open] .i-bars{display:none}
  .menu[open] .i-x{display:block}
  .menu summary::-webkit-details-marker{display:none}
- nav .menu ul{position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 12px;font-size:17px}
- nav .menu li a{display:block;padding:12px 0;border-top:1px solid var(--line);color:var(--ink)}
+ nav .menu ul{position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--panel);border-bottom:1px solid var(--line);padding:4px 24px 10px;font-size:16px;box-shadow:0 28px 40px -20px rgba(0,0,0,.55)}
+ nav .menu li a{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:500}
+ nav .menu li a::after{content:"";width:8px;height:8px;border-top:2px solid var(--mute);border-right:2px solid var(--mute);transform:rotate(45deg);margin-right:4px}
  nav .menu li:first-child a{border-top:0}
+ .menu[open]::before{content:"";position:absolute;left:0;right:0;top:56px;height:100vh;background:rgba(5,10,14,.55);z-index:-1}
  .metrics{grid-template-columns:1fr 1fr}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .steps{grid-template-columns:1fr 1fr}
  .plist li{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -150,6 +152,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .hero{padding-top:28px}
  h2{font-size:26px}
  .photo{width:200px}
+ nav .menu ul{padding-left:18px;padding-right:18px}
  .path li{grid-template-columns:54px minmax(0,1fr)}
  .path li::before{left:54px}
  .path li::after{left:48px}
@@ -323,7 +326,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </section>
 </main>
 <footer class="site"><div class="wrap foot"><span>&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</span><a href="#top">Back to top</a></div></footer>
-<script>document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").removeAttribute("open")})})</script>
+<script>var mn=document.querySelector(".menu");document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){mn.removeAttribute("open")})});mn.addEventListener("click",function(e){if(e.target===mn)mn.removeAttribute("open")});document.addEventListener("keydown",function(e){if(e.key==="Escape")mn.removeAttribute("open")})</script>
 <script>(function(){var r=document.documentElement,b=document.querySelector(".theme"),mq=window.matchMedia("(prefers-color-scheme:dark)");
 function cur(){return r.getAttribute("data-theme")||(mq.matches?"dark":"light")}
 function sync(){var d=cur()==="dark";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#0f161c":"#f2f5f7")}
