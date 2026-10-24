@@ -44,6 +44,14 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
 nav ul a{color:var(--mute);text-decoration:none}
 @media (hover:hover){nav ul a:hover{color:var(--ink)}}
+nav .links a{position:relative;padding:6px 0;transition:color .15s}
+nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+nav .links a[aria-current="true"]{color:var(--ink)}
+nav .links a[aria-current="true"]::after{transform:scaleX(1)}
+@media (hover:hover){nav .links a:hover::after{transform:scaleX(1)}}
+.btn{transition:border-color .15s,transform .1s}
+.btn:active{transform:translateY(1px)}
+@keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 section{padding:80px 0 0}
 h1{font-size:clamp(39px,6.8vw,65px);line-height:1.05;margin:0 0 16px;font-weight:700;letter-spacing:-.02em}
 h2{font-size:30px;margin:0 0 12px;font-weight:800;letter-spacing:-.015em}
@@ -136,9 +144,14 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .menu[open] .i-x{display:block}
  .menu summary::-webkit-details-marker{display:none}
  nav .menu ul{position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--panel);border-bottom:1px solid var(--line);padding:4px 24px 10px;font-size:16px;box-shadow:0 28px 40px -20px rgba(0,0,0,.55)}
- nav .menu li a{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:500}
+ nav .menu li{border-top:1px solid var(--line)}
+ nav .menu li a{display:flex;justify-content:space-between;align-items:center;margin:4px -10px;padding:11px 10px;border-radius:8px;color:var(--ink);font-weight:500;transition:background .15s,color .15s}
+ nav .menu li a:active{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+ nav .menu li a[aria-current="true"]{color:var(--accent)}
+ nav .menu li a[aria-current="true"]::after,nav .menu li a:active::after{border-color:var(--accent)}
+ .menu[open] ul{animation:drop .18s ease-out}
  nav .menu li a::after{content:"";width:8px;height:8px;border-top:2px solid var(--mute);border-right:2px solid var(--mute);transform:rotate(45deg);margin-right:4px}
- nav .menu li:first-child a{border-top:0}
+ nav .menu li:first-child{border-top:0}
  .menu[open]::before{content:"";position:absolute;left:0;right:0;top:56px;height:100vh;background:rgba(5,10,14,.55);z-index:-1}
  .metrics{grid-template-columns:1fr 1fr}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .steps{grid-template-columns:1fr 1fr}
@@ -165,7 +178,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .metrics strong{font-size:22px}
  .steps{grid-template-columns:minmax(0,1fr)}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.menu[open] ul{animation:none}nav .links a::after,.btn{transition:none}}
 </style>
 </head>
 <body id="top">
@@ -326,11 +339,15 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </section>
 </main>
 <footer class="site"><div class="wrap foot"><span>&copy; 2026 Ahmed Mostafa Hussein. Cairo, Egypt.</span><a href="#top">Back to top</a></div></footer>
-<script>var mn=document.querySelector(".menu");document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){mn.removeAttribute("open")})});mn.addEventListener("click",function(e){if(e.target===mn)mn.removeAttribute("open")});document.addEventListener("keydown",function(e){if(e.key==="Escape")mn.removeAttribute("open")})</script>
+<script>var mn=document.querySelector(".menu");document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){setTimeout(function(){mn.removeAttribute("open")},160)})});mn.addEventListener("click",function(e){if(e.target===mn)mn.removeAttribute("open")});document.addEventListener("keydown",function(e){if(e.key==="Escape")mn.removeAttribute("open")})</script>
 <script>(function(){var r=document.documentElement,b=document.querySelector(".theme"),mq=window.matchMedia("(prefers-color-scheme:dark)");
 function cur(){return r.getAttribute("data-theme")||(mq.matches?"dark":"light")}
 function sync(){var d=cur()==="dark";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#0f161c":"#f2f5f7")}
 b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()});
 if(mq.addEventListener)mq.addEventListener("change",function(){if(!r.hasAttribute("data-theme"))sync()});sync()})();</script>
+<script>(function(){var ids=["lab","approach","path","toolbox","credentials","more","contact"],links=document.querySelectorAll('nav a[href^="#"]'),t=false;
+function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+id)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
+function spy(){t=false;var cur=null;ids.forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=200)cur=id});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur="contact";set(cur)}
+window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(spy)}},{passive:true});spy()})();</script>
 </body>
 </html>
