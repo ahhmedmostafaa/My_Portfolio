@@ -130,7 +130,8 @@ p{margin:0 0 14px;max-width:64ch}
 .certs em{font-style:normal;color:var(--mute);font-size:15px;line-height:1.4}
 .contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.foot a{text-decoration:none;color:var(--mute);font-weight:500;transition:color .15s;white-space:nowrap}
+.foot a{text-decoration:none;color:var(--ink);font-weight:700;transition:color .15s;white-space:nowrap;padding:8px 0}
+.foot a::before{color:var(--accent)}
 @media (hover:hover){.foot a:hover{color:var(--accent)}}
 .foot a::before{content:"";display:inline-block;width:7px;height:7px;border-top:2px solid currentColor;border-left:2px solid currentColor;transform:rotate(45deg);margin-right:8px;vertical-align:-1px}
 footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
