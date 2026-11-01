@@ -87,6 +87,20 @@ p{margin:0 0 14px;max-width:64ch}
 .tag{flex:none;min-width:70px;font-weight:500}
 .t-det{color:#7fd0d8}.t-warn{color:#f0a050}.t-blk{color:#8ee09a}
 .log footer{padding:10px 16px;border-top:1px solid #2a3a47;color:#8fa3b3;font-size:12px}
+.fig{margin:40px 0 0}
+.fig-open{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:zoom-in;overflow:hidden;box-shadow:0 18px 36px -26px rgba(0,0,0,.5)}
+.fig-open img{display:block;width:100%;height:auto}
+.fig-hint{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;background:rgba(19,32,43,.9);color:#fff;font-size:13px;font-weight:700;padding:7px 14px 7px 12px;border-radius:999px}
+.fig-hint .ic{margin-right:6px;vertical-align:0}
+.fig figcaption{margin-top:12px;font-size:15px;color:var(--mute);max-width:80ch}
+.viewer{border:0;padding:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;background:#fff;color:#13202b;overflow:hidden}
+.viewer::backdrop{background:rgba(5,10,14,.85)}
+.viewer[open]{display:flex;flex-direction:column}
+.viewer-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #d5dde4;font-weight:700;flex:none;background:#f2f5f7}
+.viewer-close{width:42px;height:38px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #d5dde4;border-radius:6px;background:#fff;color:#13202b;cursor:pointer;padding:0}
+.viewer-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;background:#fff}
+.viewer-body img{display:block;width:1600px;max-width:none;height:auto}
+@media (min-width:1100px){.viewer-body img{width:100%;cursor:zoom-in}.viewer-body.zoom img{width:2663px;cursor:zoom-out}}
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);margin:32px 0 20px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
 .metrics div{padding:16px;border-right:1px solid var(--line)}
 .metrics div:last-child{border:0}
@@ -236,6 +250,17 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
    <footer>Illustration of the flow, not a real log.</footer>
   </aside>
  </div>
+ <figure class="fig">
+  <button class="fig-open" type="button" aria-label="Open the network diagram full screen">
+   <img src="network-topology-1200.webp" srcset="network-topology-1200.webp 1200w, network-topology.webp 2663w" sizes="(max-width:820px) 100vw, 1000px" width="2663" height="1632" alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet." loading="lazy">
+   <span class="fig-hint"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</span>
+  </button>
+  <figcaption>The lab in GNS3: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet.</figcaption>
+ </figure>
+ <dialog class="viewer" id="viewer" aria-label="Lab network diagram">
+  <div class="viewer-bar"><span>Lab network topology</span><button class="viewer-close" type="button" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="viewer-body"><img src="network-topology.webp" width="2663" height="1632" alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet."></div>
+ </dialog>
  <div class="metrics">
   <div><strong>98.94%</strong><span>classifier accuracy across 8 attack types</span></div>
   <div><strong>240 / 240</strong><span>live attacks detected and blocked</span></div>
@@ -358,5 +383,10 @@ if(mq.addEventListener)mq.addEventListener("change",function(){if(!r.hasAttribut
 function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+id)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
 function spy(){t=false;var cur=null;ids.forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=200)cur=id});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur="contact";set(cur)}
 window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(spy)}},{passive:true});spy()})();</script>
+<script>(function(){var d=document.getElementById("viewer"),o=document.querySelector(".fig-open");if(!d||!o)return;var b=d.querySelector(".viewer-body"),h=document.documentElement;
+o.addEventListener("click",function(){if(d.showModal){d.showModal();h.style.overflow="hidden";b.scrollTop=0;b.scrollLeft=0}else{window.open("network-topology.webp","_blank")}});
+d.querySelector(".viewer-close").addEventListener("click",function(){d.close()});
+d.addEventListener("close",function(){h.style.overflow="";b.classList.remove("zoom")});
+b.addEventListener("click",function(){b.classList.toggle("zoom")})})();</script>
 </body>
 </html>
