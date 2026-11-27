@@ -101,8 +101,6 @@ h1,h2,.hero p,.lede{text-wrap:balance}
 .glance .g span:not(.gi){display:block;font-size:14px;color:var(--mute);line-height:1.35;margin-top:2px}
 .fig-open{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:zoom-in;overflow:hidden;box-shadow:0 18px 36px -26px rgba(0,0,0,.5)}
 .fig-open img{display:block;width:100%;height:auto}
-.fig-hint{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;background:rgba(19,32,43,.9);color:#fff;font-size:13px;font-weight:700;padding:7px 14px 7px 12px;border-radius:999px}
-.fig-hint .ic{margin-right:6px;vertical-align:0}
 .fig figcaption{font-size:15px;color:var(--mute);max-width:80ch}
 .viewer{border:0;padding:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;background:#fff;color:#13202b;overflow:hidden}
 .viewer::backdrop{background:rgba(5,10,14,.85)}
@@ -168,30 +166,36 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 .log,.glance{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .fig-open{transition:box-shadow .25s ease,border-color .25s ease}
 .fig-open img{transition:transform .5s ease}
-.fig-hint{transition:transform .2s ease}
 @media (hover:hover){
  .log:hover,.glance:hover{transform:translateY(-3px);box-shadow:0 16px 28px -20px rgba(0,0,0,.5)}
  .glance:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
  .fig-open:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 24px 44px -26px rgba(0,0,0,.65)}
  .fig-open:hover img{transform:scale(1.02)}
- .fig-open:hover .fig-hint{transform:translateY(-2px)}
 }
-@media (prefers-reduced-motion:reduce){.log,.glance,.fig-open,.fig-open img,.fig-hint{transition:none}.log:hover,.glance:hover,.fig-open:hover img,.fig-open:hover .fig-hint{transform:none}}
+@media (prefers-reduced-motion:reduce){.log,.glance,.fig-open,.fig-open img{transition:none}.log:hover,.glance:hover,.fig-open:hover img{transform:none}}
 .kicker{display:block;font:500 13px "JetBrains Mono",monospace;color:var(--accent);margin:0 0 10px;letter-spacing:.01em}
-.figrow.wide{grid-template-columns:minmax(0,740px) minmax(0,1fr)}
-.cov .row{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
-.cov .row>div{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--ink)}
-.cov .row b{font-size:15px;color:var(--accent);font-weight:800}
-.cov .bar{display:block;height:8px;border-radius:99px;background:color-mix(in srgb,var(--accent) 16%,transparent);overflow:hidden}
-.cov .bar i{display:block;height:100%;width:calc(var(--n)*25%);background:var(--accent);border-radius:99px}
 .points{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin:30px 0}
 .points>div{border-top:2px solid var(--line);padding-top:16px}
 .points h3{font-size:17px;margin:0 0 6px}
 .points p{font-size:15px;color:var(--mute);margin:0;max-width:none}
+.fig figcaption,.figfull figcaption{display:flex;justify-content:space-between;align-items:flex-start;gap:10px 16px;flex-wrap:wrap}
+.figfull{margin:34px 0 0}
+.figfull figcaption{margin-top:12px;font-size:15px;color:var(--mute)}
+.figfull figcaption span,.fig figcaption span{flex:1 1 260px;max-width:80ch}
+.fig-enlarge{display:inline-flex;align-items:center;gap:7px;flex:none;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font:700 14px "Schibsted Grotesk",system-ui,sans-serif;cursor:pointer;transition:border-color .15s,color .15s}
+.fig-enlarge .ic{margin:0}
+@media (hover:hover){.fig-enlarge:hover{border-color:var(--accent);color:var(--accent)}}
+.det li{grid-template-columns:minmax(0,1fr) auto;align-items:baseline}
+.det li>span{color:var(--ink);font-size:16px;font-weight:700;line-height:1.4}
+.det small{display:block;color:var(--mute);font-size:14px;font-weight:400;margin-top:2px}
+.det em{font:500 14px "JetBrains Mono",monospace;font-style:normal;color:var(--accent);white-space:nowrap}
+#lab{padding-top:0}
+#lab::before{content:"";display:block;height:1px;margin:76px 0;background:linear-gradient(90deg,transparent,var(--line) 14%,var(--line) 86%,transparent)}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
- .figrow,.figrow.wide{grid-template-columns:minmax(0,1fr);row-gap:14px}
+ .figrow{grid-template-columns:minmax(0,1fr);row-gap:14px}
  .points{grid-template-columns:minmax(0,1fr);gap:22px;margin:26px 0}
+ .det li{grid-template-columns:minmax(0,1fr);gap:4px}
  .glance{grid-column:1;grid-row:3;margin-top:10px}
  .glance .g{flex:none;padding:14px 0}
  .photo{justify-self:center;width:230px;max-width:none;aspect-ratio:1/1;border-radius:50%;object-position:center 12%;order:-1}
@@ -225,6 +229,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  section{padding-top:56px}
  .hero{padding-top:28px}
  h2{font-size:26px}
+ #lab::before{margin:56px 0}
  .photo{width:200px}
  .role{font-size:clamp(14px,4.5vw,20px);white-space:nowrap}
  footer.site{margin-top:56px;padding:24px 0 36px}
@@ -276,23 +281,12 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <span class="kicker">Project 01: SIEM and detection engineering</span>
  <h2>The SOC I built from scratch</h2>
  <p class="lede">A small enterprise on one workstation, with a Windows domain, a firewall and a Splunk SIEM, then attacked on purpose. Every alert in it fired because I ran the attack, so nothing is theoretical.</p>
- <div class="figrow wide">
-  <figure class="fig">
-   <button class="fig-open" type="button" aria-label="Open the SOC home lab architecture full screen" data-full="soc-homelab-cover.svg" data-w="1280" data-h="640" data-zoom="2560" data-title="SOC home lab architecture" data-alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel.">
-    <img src="soc-homelab-cover-1200.webp" srcset="soc-homelab-cover-1200.webp 1200w, soc-homelab-cover.webp 2560w" sizes="(max-width:820px) 100vw, 740px" width="2560" height="1280" alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel." decoding="async">
-    <span class="fig-hint"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</span>
+ <figure class="figfull">
+  <button class="fig-open" type="button" aria-label="Open the SOC home lab architecture full screen" data-full="soc-homelab-cover.svg" data-w="1280" data-h="640" data-zoom="2560" data-title="SOC home lab architecture" data-alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel.">
+    <img src="soc-homelab-cover-1200.webp" srcset="soc-homelab-cover-1200.webp 1200w, soc-homelab-cover.webp 2560w" sizes="(max-width:820px) 100vw, 992px" width="2560" height="1280" alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel." decoding="async">
    </button>
-   <figcaption>The SOC home lab: an attacker network, a corporate LAN with Active Directory and Splunk, SOAR on Docker, and an Azure VM monitored through a secure tunnel.</figcaption>
-  </figure>
-  <aside class="glance cov" aria-label="Detections by MITRE ATT&amp;CK tactic">
-   <h3>Detections by ATT&amp;CK tactic</h3>
-   <div class="row"><div><span>Credential Access</span><b>4</b></div><span class="bar" style="--n:4"><i></i></span></div>
-   <div class="row"><div><span>Persistence</span><b>3</b></div><span class="bar" style="--n:3"><i></i></span></div>
-   <div class="row"><div><span>Discovery</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
-   <div class="row"><div><span>Lateral Movement</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
-   <div class="row"><div><span>Defense Evasion</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
-  </aside>
- </div>
+  <figcaption><span>The SOC home lab: an attacker network, a corporate LAN with Active Directory and Splunk, SOAR on Docker, and an Azure VM monitored through a secure tunnel.</span><button class="fig-enlarge" type="button" aria-label="Open the diagram full screen"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</button></figcaption>
+ </figure>
  <div class="metrics">
   <div><strong>10</strong><span>custom detections mapped to MITRE ATT&amp;CK</span></div>
   <div><strong>4</strong><span>manual threat hunts</span></div>
@@ -305,6 +299,18 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <div><h3>SOAR with a human in the loop</h3><p>A Shuffle playbook enriches each alert with VirusTotal and AbuseIPDB, asks me on Telegram to block or ignore, and pushes approved blocks to pfSense through its API.</p></div>
   <div><h3>Hybrid cloud monitoring</h3><p>An Azure Ubuntu VM sends its SSH logs to Splunk through a secure tunnel, with a detection that tells brute force from password spraying.</p></div>
  </div>
+ <details class="grp"><summary>All 10 detections, mapped to MITRE ATT&amp;CK <span>10</span></summary><ul class="plist det">
+  <li><span>Port Scan Detected (pfSense)<small>Discovery: Network Service Discovery</small></span><em>T1046</em></li>
+  <li><span>Brute Force: Multiple Failed Logons (Windows)<small>Credential Access: Password Guessing</small></span><em>T1110.001</em></li>
+  <li><span>SSH Brute Force Detected (Linux and Azure)<small>Credential Access: Password Guessing</small></span><em>T1110.001</em></li>
+  <li><span>Kerberoasting Detected (Event 4769)<small>Credential Access: Kerberoasting</small></span><em>T1558.003</em></li>
+  <li><span>Credential Dumping: LSASS Access (Sysmon 10)<small>Credential Access: LSASS Memory</small></span><em>T1003.001</em></li>
+  <li><span>Suspicious Scheduled Task Created (Event 4698)<small>Persistence: Scheduled Task</small></span><em>T1053.005</em></li>
+  <li><span>Registry Persistence: Run Key Modified<small>Persistence: Registry Run Keys</small></span><em>T1547.001</em></li>
+  <li><span>Privileged Group Membership Change<small>Persistence and Privilege Escalation: Account Manipulation</small></span><em>T1098</em></li>
+  <li><span>RDP Logon Detected (Event 4624, Type 10)<small>Lateral Movement: Remote Desktop Protocol</small></span><em>T1021.001</em></li>
+  <li><span>Log Clearing Detected (Event 1102)<small>Defense Evasion: Clear Windows Event Logs</small></span><em>T1070.001</em></li>
+ </ul></details>
  <ul class="chips"><li>Splunk</li><li>Sysmon</li><li>Active Directory</li><li>pfSense</li><li>Microsoft Azure</li><li>Shuffle SOAR</li><li>Docker</li><li>Kali Linux</li><li>Hydra</li><li>Nmap</li><li>MITRE ATT&amp;CK</li><li>VirusTotal</li></ul>
  <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/SOC-SIEM-SOAR-HomeLab">Read the full write-up and code on <span class="nw">GitHub</span></a></p>
 </section>
@@ -335,9 +341,8 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <figure class="fig">
   <button class="fig-open" type="button" aria-label="Open the network diagram full screen" data-full="network-topology.webp" data-w="2663" data-h="1632" data-title="Lab network topology" data-alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet.">
    <img src="network-topology-1200.webp" srcset="network-topology-1200.webp 1200w, network-topology.webp 2663w" sizes="(max-width:820px) 100vw, 700px" width="2663" height="1632" alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet." decoding="async">
-   <span class="fig-hint"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</span>
   </button>
-  <figcaption>The lab in GNS3: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet.</figcaption>
+  <figcaption><span>The lab in GNS3: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet.</span><button class="fig-enlarge" type="button" aria-label="Open the diagram full screen"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</button></figcaption>
  </figure>
   <aside class="glance" aria-label="The network at a glance">
    <h3>Network at a glance</h3>
@@ -474,7 +479,7 @@ function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+(
 function spy(){t=false;var cur=null;ids.forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=200)cur=id});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur="contact";set(cur)}
 window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(spy)}},{passive:true});spy()})();</script>
 <script>(function(){var d=document.getElementById("viewer");if(!d)return;var b=d.querySelector(".viewer-body"),img=document.getElementById("viewer-img"),t=document.getElementById("viewer-title"),h=document.documentElement;
-document.querySelectorAll(".fig-open").forEach(function(o){o.addEventListener("click",function(){var src=o.getAttribute("data-full");if(d.showModal){img.src=src;img.alt=o.getAttribute("data-alt")||"";img.width=+o.getAttribute("data-w");img.height=+o.getAttribute("data-h");img.style.setProperty("--zw",(o.getAttribute("data-zoom")||o.getAttribute("data-w"))+"px");t.textContent=o.getAttribute("data-title")||"";d.showModal();h.style.overflow="hidden";b.scrollTop=0;b.scrollLeft=0}else{window.open(src,"_blank")}})});
+document.querySelectorAll(".fig-open").forEach(function(o){var f=o.closest(".fig,.figfull"),e=f&&f.querySelector(".fig-enlarge");if(e)e.addEventListener("click",function(){o.click()});o.addEventListener("click",function(){var src=o.getAttribute("data-full");if(d.showModal){img.src=src;img.alt=o.getAttribute("data-alt")||"";img.width=+o.getAttribute("data-w");img.height=+o.getAttribute("data-h");img.style.setProperty("--zw",(o.getAttribute("data-zoom")||o.getAttribute("data-w"))+"px");t.textContent=o.getAttribute("data-title")||"";d.showModal();h.style.overflow="hidden";b.scrollTop=0;b.scrollLeft=0}else{window.open(src,"_blank")}})});
 d.querySelector(".viewer-close").addEventListener("click",function(){d.close()});
 d.addEventListener("close",function(){h.style.overflow="";b.classList.remove("zoom")});
 b.addEventListener("click",function(){b.classList.toggle("zoom")})})();</script>
