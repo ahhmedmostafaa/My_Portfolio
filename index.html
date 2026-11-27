@@ -9,6 +9,7 @@
 <meta name="color-scheme" content="light dark">
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://ahhmedmostafaa.github.io/My_Portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ahmed Mostafa Hussein | SOC Analyst &amp; Cybersecurity Analyst">
@@ -187,14 +188,14 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 .det li>span{color:var(--ink);font-size:16px;font-weight:700;line-height:1.4}
 .det small{display:block;color:var(--mute);font-size:14px;font-weight:400;margin-top:2px}
 .det em{font:500 14px "JetBrains Mono",monospace;font-style:normal;color:var(--accent);white-space:nowrap}
-#lab{padding-top:0}
-#lab::before{content:"";display:block;height:1px;margin:76px 0;background:linear-gradient(90deg,transparent,var(--line) 14%,var(--line) 86%,transparent)}
+#soc-lab,#lab{padding-top:0}
+#soc-lab::before,#lab::before{content:"";display:block;height:1px;margin:72px 0;background:linear-gradient(90deg,transparent,var(--line) 14%,var(--line) 86%,transparent)}
 /* polish layer */
 ::selection{background:color-mix(in srgb,var(--accent) 26%,transparent)}
 body::before{content:"";position:absolute;inset:0 0 auto 0;height:920px;z-index:-1;pointer-events:none;background:radial-gradient(760px 420px at 82% 6%,var(--accent-soft),transparent 70%),radial-gradient(620px 360px at 4% 2%,color-mix(in srgb,var(--accent) 5%,transparent),transparent 70%),radial-gradient(circle at 1px 1px,var(--grid) 1px,transparent 0) 0 0/26px 26px;-webkit-mask-image:linear-gradient(#000 0,#000 40%,transparent 100%);mask-image:linear-gradient(#000 0,#000 40%,transparent 100%)}
 nav.scrolled{border-bottom-color:var(--line);box-shadow:0 12px 30px -24px rgba(var(--shadow),.5)}
 nav::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-strong));transform:scaleX(var(--p,0));transform-origin:left;pointer-events:none}
-.mark{width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;background:var(--ink);color:var(--bg);font:700 11px/1 "JetBrains Mono",monospace;letter-spacing:.02em;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.mark{width:30px;height:30px;border-radius:7px;display:inline-grid;place-items:center;background:#0f1c27;color:#4fc3cc;box-shadow:inset 0 0 0 1px #255760;font:700 12px/1 "JetBrains Mono",monospace;letter-spacing:.01em;transition:transform .3s cubic-bezier(.22,1,.36,1)}
 @media (hover:hover){.brand:hover .mark{transform:rotate(-6deg) scale(1.06)}}
 .theme svg{transition:transform .4s cubic-bezier(.22,1,.36,1)}
 @keyframes swap{from{transform:rotate(-70deg) scale(.5);opacity:0}to{transform:none;opacity:1}}
@@ -230,6 +231,9 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
 }
 @media (prefers-reduced-motion:reduce){.grp[open] .plist,.viewer[open]{animation:none}.mark,.btn,.btn .ic,.theme,.theme svg,a{transition:none}}
 @media print{body::before,nav,.skip,.theme,.menu,.btns,.fig-enlarge,.foot a,.viewer{display:none !important}body{background:#fff;color:#000}.rv{opacity:1 !important;transform:none !important}section{padding-top:28px}.steps li,.tools div,.grp,.glance,.metrics{box-shadow:none}}
+.grp summary span.st{margin-left:0;min-width:0;color:var(--ink);font-size:inherit;font-weight:inherit}
+.grp summary span.st strong{display:block;font-weight:800;font-size:18px;letter-spacing:-.005em;line-height:1.3}
+.grp summary span.st small{display:block;color:var(--mute);font-weight:400;font-size:14px;line-height:1.4;margin-top:2px}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
  .figrow{grid-template-columns:minmax(0,1fr);row-gap:14px}
@@ -244,6 +248,9 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  nav .links{display:none}
  .menu{display:block}
  .theme{width:44px;height:44px}
+ .fig-enlarge{display:none}
+ .fig-open::after{content:"Tap to enlarge";display:block;padding:12px 14px;text-align:center;font:700 14px "Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--panel);border-top:1px solid var(--line);transition:color .15s}
+ .fig-open:active::after{color:var(--accent)}
  .menu summary{cursor:pointer;list-style:none;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);box-shadow:var(--card-shadow)}
  .menu .i-x,.menu[open] .i-bars{display:none}
  .menu[open] .i-x{display:block}
@@ -269,7 +276,8 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  section{padding-top:56px}
  .hero{padding-top:28px}
  h2{font-size:26px}
- #lab::before{margin:56px 0}
+ #soc-lab::before,#lab::before{margin:52px 0}
+ .kicker{font-size:12px}
  .photo{width:200px}
  .role{font-size:clamp(14px,4.5vw,20px);white-space:nowrap}
  footer.site{margin-top:56px;padding:24px 0 36px}
@@ -339,7 +347,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
   <div><h3>SOAR with a human in the loop</h3><p>A Shuffle playbook enriches each alert with VirusTotal and AbuseIPDB, asks me on Telegram to block or ignore, and pushes approved blocks to pfSense through its API.</p></div>
   <div><h3>Hybrid cloud monitoring</h3><p>An Azure Ubuntu VM sends its SSH logs to Splunk through a secure tunnel, with a detection that tells brute force from password spraying.</p></div>
  </div>
- <details class="grp"><summary>All 10 detections, mapped to MITRE ATT&amp;CK <span>10</span></summary><ul class="plist det">
+ <details class="grp"><summary><span class="st"><strong>MITRE ATT&amp;CK coverage</strong><small>10 detections, each mapped to a technique</small></span><span>10</span></summary><ul class="plist det">
   <li><span>Port Scan Detected (pfSense)<small>Discovery: Network Service Discovery</small></span><em>T1046</em></li>
   <li><span>Brute Force: Multiple Failed Logons (Windows)<small>Credential Access: Password Guessing</small></span><em>T1110.001</em></li>
   <li><span>SSH Brute Force Detected (Linux and Azure)<small>Credential Access: Password Guessing</small></span><em>T1110.001</em></li>
@@ -356,7 +364,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
 </section>
 
 <section id="lab">
- <span class="kicker">Project 02: Machine learning and automated response</span>
+ <span class="kicker">Project 02: AI-powered automated defense</span>
  <h2>The lab that defends itself</h2>
  <p class="lede">A second lab, built to answer a different question: how far can a network get without a person reading every alert?</p>
  <div class="case">
