@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://ahhmedmostafaa.github.io/My_Portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ahmed Mostafa Hussein | SOC Analyst &amp; Cybersecurity Analyst">
-<meta property="og:description" content="Entry-level SOC Analyst in Cairo. Threat detection, alert investigation and incident response, backed by SIEM training and a hands-on lab.">
+<meta property="og:description" content="Entry-level SOC Analyst in Cairo. Threat detection, alert investigation and incident response, backed by SIEM training and two hands-on labs.">
 <meta property="og:url" content="https://ahhmedmostafaa.github.io/My_Portfolio/">
 <meta property="og:image" content="https://ahhmedmostafaa.github.io/My_Portfolio/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -100,7 +100,7 @@ h1,h2,.hero p,.lede{text-wrap:balance}
 .glance strong{display:block;font-size:26px;line-height:1.05;font-weight:800;color:var(--ink)}
 .glance .g span:not(.gi){display:block;font-size:14px;color:var(--mute);line-height:1.35;margin-top:2px}
 .fig-open{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:zoom-in;overflow:hidden;box-shadow:0 18px 36px -26px rgba(0,0,0,.5)}
-.fig-open img{display:block;width:100%;height:auto;aspect-ratio:2663/1632}
+.fig-open img{display:block;width:100%;height:auto}
 .fig-hint{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;background:rgba(19,32,43,.9);color:#fff;font-size:13px;font-weight:700;padding:7px 14px 7px 12px;border-radius:999px}
 .fig-hint .ic{margin-right:6px;vertical-align:0}
 .fig figcaption{font-size:15px;color:var(--mute);max-width:80ch}
@@ -111,7 +111,7 @@ h1,h2,.hero p,.lede{text-wrap:balance}
 .viewer-close{width:42px;height:38px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #d5dde4;border-radius:6px;background:#fff;color:#13202b;cursor:pointer;padding:0}
 .viewer-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;background:#fff}
 .viewer-body img{display:block;width:1600px;max-width:none;height:auto}
-@media (min-width:1100px){.viewer-body img{width:100%;cursor:zoom-in}.viewer-body.zoom img{width:2663px;cursor:zoom-out}}
+@media (min-width:1100px){.viewer-body img{width:100%;cursor:zoom-in}.viewer-body.zoom img{width:var(--zw,auto);cursor:zoom-out}}
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);margin:32px 0 20px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
 .metrics div{padding:16px;border-right:1px solid var(--line)}
 .metrics div:last-child{border:0}
@@ -177,9 +177,21 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  .fig-open:hover .fig-hint{transform:translateY(-2px)}
 }
 @media (prefers-reduced-motion:reduce){.log,.glance,.fig-open,.fig-open img,.fig-hint{transition:none}.log:hover,.glance:hover,.fig-open:hover img,.fig-open:hover .fig-hint{transform:none}}
+.kicker{display:block;font:500 13px "JetBrains Mono",monospace;color:var(--accent);margin:0 0 10px;letter-spacing:.01em}
+.figrow.wide{grid-template-columns:minmax(0,740px) minmax(0,1fr)}
+.cov .row{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.cov .row>div{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--ink)}
+.cov .row b{font-size:15px;color:var(--accent);font-weight:800}
+.cov .bar{display:block;height:8px;border-radius:99px;background:color-mix(in srgb,var(--accent) 16%,transparent);overflow:hidden}
+.cov .bar i{display:block;height:100%;width:calc(var(--n)*25%);background:var(--accent);border-radius:99px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin:30px 0}
+.points>div{border-top:2px solid var(--line);padding-top:16px}
+.points h3{font-size:17px;margin:0 0 6px}
+.points p{font-size:15px;color:var(--mute);margin:0;max-width:none}
 @media (max-width:820px){
  .hero,.case{grid-template-columns:minmax(0,1fr);gap:28px}
- .figrow{grid-template-columns:minmax(0,1fr);row-gap:14px}
+ .figrow,.figrow.wide{grid-template-columns:minmax(0,1fr);row-gap:14px}
+ .points{grid-template-columns:minmax(0,1fr);gap:22px;margin:26px 0}
  .glance{grid-column:1;grid-row:3;margin-top:10px}
  .glance .g{flex:none;padding:14px 0}
  .photo{justify-self:center;width:230px;max-width:none;aspect-ratio:1/1;border-radius:50%;object-position:center 12%;order:-1}
@@ -236,11 +248,11 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
 </style>
 </head>
 <body id="top">
-<a class="skip" href="#lab">Skip to content</a>
+<a class="skip" href="#soc-lab">Skip to content</a>
 <nav><div class="wrap"><a class="brand" href="#top" aria-label="Ahmed Hussein, back to top">Ahmed Hussein</a>
-<div class="actions"><ul class="links"><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#more">More work</a></li><li><a href="#contact">Contact</a></li></ul>
+<div class="actions"><ul class="links"><li><a href="#soc-lab">Labs</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#more">More work</a></li><li><a href="#contact">Contact</a></li></ul>
 <button class="theme" type="button" aria-label="Switch to dark mode"><svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-<details class="menu"><summary aria-label="Open navigation menu"><svg class="i-bars" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><ul><li><a href="#lab">The lab</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#more">More work</a></li><li><a href="#contact">Contact</a></li></ul></details></div></div></nav>
+<details class="menu"><summary aria-label="Open navigation menu"><svg class="i-bars" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><ul><li><a href="#soc-lab">Labs</a></li><li><a href="#approach">Approach</a></li><li><a href="#path">Path</a></li><li><a href="#toolbox">Toolbox</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#more">More work</a></li><li><a href="#contact">Contact</a></li></ul></details></div></div></nav>
 
 <main class="wrap">
 <div class="hero">
@@ -251,7 +263,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
   <p>I focus on detecting threats, investigating alerts and responding to incidents, backed by <span class="nw">hands-on</span> SIEM, endpoint and network defense training.</p>
   <p>I'm looking to join a SOC team where I can turn alerts into clear, documented decisions.</p>
   <div class="btns">
-   <a class="btn main" href="#lab"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>See my lab</a>
+   <a class="btn main" href="#soc-lab"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>See my labs</a>
    <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV</a>
    <a class="btn" href="#contact"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>Contact</a>
   </div>
@@ -260,9 +272,47 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <img class="photo" src="profile.jpg" width="720" height="1000" alt="Portrait of Ahmed Mostafa Hussein">
 </div>
 
+<section id="soc-lab">
+ <span class="kicker">Project 01: SIEM and detection engineering</span>
+ <h2>The SOC I built from scratch</h2>
+ <p class="lede">A small enterprise on one workstation, with a Windows domain, a firewall and a Splunk SIEM, then attacked on purpose. Every alert in it fired because I ran the attack, so nothing is theoretical.</p>
+ <div class="figrow wide">
+  <figure class="fig">
+   <button class="fig-open" type="button" aria-label="Open the SOC home lab architecture full screen" data-full="soc-homelab-cover.svg" data-w="1280" data-h="640" data-zoom="2560" data-title="SOC home lab architecture" data-alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel.">
+    <img src="soc-homelab-cover-1200.webp" srcset="soc-homelab-cover-1200.webp 1200w, soc-homelab-cover.webp 2560w" sizes="(max-width:820px) 100vw, 740px" width="2560" height="1280" alt="Illustrated architecture of the SOC home lab: a Kali attacker network, a pfSense firewall, a corporate LAN with a domain controller, two Windows endpoints and Splunk, a Shuffle SOAR server on Docker, and an Azure Ubuntu VM connected through a secure tunnel." decoding="async">
+    <span class="fig-hint"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</span>
+   </button>
+   <figcaption>The SOC home lab: an attacker network, a corporate LAN with Active Directory and Splunk, SOAR on Docker, and an Azure VM monitored through a secure tunnel.</figcaption>
+  </figure>
+  <aside class="glance cov" aria-label="Detections by MITRE ATT&amp;CK tactic">
+   <h3>Detections by ATT&amp;CK tactic</h3>
+   <div class="row"><div><span>Credential Access</span><b>4</b></div><span class="bar" style="--n:4"><i></i></span></div>
+   <div class="row"><div><span>Persistence</span><b>3</b></div><span class="bar" style="--n:3"><i></i></span></div>
+   <div class="row"><div><span>Discovery</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
+   <div class="row"><div><span>Lateral Movement</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
+   <div class="row"><div><span>Defense Evasion</span><b>1</b></div><span class="bar" style="--n:1"><i></i></span></div>
+  </aside>
+ </div>
+ <div class="metrics">
+  <div><strong>10</strong><span>custom detections mapped to MITRE ATT&amp;CK</span></div>
+  <div><strong>4</strong><span>manual threat hunts</span></div>
+  <div><strong>5</strong><span>SOAR workflows</span></div>
+  <div><strong>7</strong><span>panels on the SOC detection dashboard</span></div>
+ </div>
+ <div class="points">
+  <div><h3>Detection engineering</h3><p>Ten custom SPL detections in Splunk, each validated against the real attack that triggered it.</p></div>
+  <div><h3>Threat hunting</h3><p>Four manual hunts for what alerts can miss: PowerShell obfuscation, LOLBins, off-hours logons and lateral movement. One hunt surfaced a data-integrity issue, which I investigated and confirmed was isolated.</p></div>
+  <div><h3>SOAR with a human in the loop</h3><p>A Shuffle playbook enriches each alert with VirusTotal and AbuseIPDB, asks me on Telegram to block or ignore, and pushes approved blocks to pfSense through its API.</p></div>
+  <div><h3>Hybrid cloud monitoring</h3><p>An Azure Ubuntu VM sends its SSH logs to Splunk through a secure tunnel, with a detection that tells brute force from password spraying.</p></div>
+ </div>
+ <ul class="chips"><li>Splunk</li><li>Sysmon</li><li>Active Directory</li><li>pfSense</li><li>Microsoft Azure</li><li>Shuffle SOAR</li><li>Docker</li><li>Kali Linux</li><li>Hydra</li><li>Nmap</li><li>MITRE ATT&amp;CK</li><li>VirusTotal</li></ul>
+ <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/SOC-SIEM-SOAR-HomeLab">Read the full write-up and code on <span class="nw">GitHub</span></a></p>
+</section>
+
 <section id="lab">
+ <span class="kicker">Project 02: Machine learning and automated response</span>
  <h2>The lab that defends itself</h2>
- <p class="lede">My main project, built to answer one question: how far can a network get without a person reading every alert?</p>
+ <p class="lede">A second lab, built to answer a different question: how far can a network get without a person reading every alert?</p>
  <div class="case">
   <div>
    <p>I built an enterprise-style network in GNS3 and VMware, attacked it with the same tools real intruders use, and connected the detection straight to the firewall.</p>
@@ -283,7 +333,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  </div>
  <div class="figrow">
   <figure class="fig">
-  <button class="fig-open" type="button" aria-label="Open the network diagram full screen">
+  <button class="fig-open" type="button" aria-label="Open the network diagram full screen" data-full="network-topology.webp" data-w="2663" data-h="1632" data-title="Lab network topology" data-alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet.">
    <img src="network-topology-1200.webp" srcset="network-topology-1200.webp 1200w, network-topology.webp 2663w" sizes="(max-width:820px) 100vw, 700px" width="2663" height="1632" alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet." decoding="async">
    <span class="fig-hint"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</span>
   </button>
@@ -297,11 +347,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
    <div class="g"><span class="gi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></span><div><strong>1</strong><span>Ubuntu AI server on its own subnet</span></div></div>
   </aside>
  </div>
- <dialog class="viewer" id="viewer" aria-label="Lab network diagram">
-  <div class="viewer-bar"><span>Lab network topology</span><button class="viewer-close" type="button" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="viewer-body"><img src="network-topology.webp" width="2663" height="1632" alt="GNS3 diagram of the lab network: four LAN zones with VLANs, joined by an OSPF-routed Cisco backbone, with a pfSense firewall at the edge and an Ubuntu AI server on its own subnet."></div>
- </dialog>
- <div class="metrics">
+  <div class="metrics">
   <div><strong>98.94%</strong><span>classifier accuracy across 8 attack types</span></div>
   <div><strong>240 / 240</strong><span>live attacks detected and blocked</span></div>
   <div><strong>872 ms</strong><span>average time from attack to block</span></div>
@@ -318,7 +364,7 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <ol class="steps">
   <li><h3>Detect</h3><p>Watch traffic and alerts across several layers, such as SIEM, IDS and network logs, instead of trusting one signal.</p></li>
   <li><h3>Investigate</h3><p>Trace an alert back to its source through packet captures, firewall logs and endpoint evidence, then decide if it is real.</p></li>
-  <li><h3>Respond</h3><p>Contain the threat fast and measure how long it takes. In my lab, an attacker is blocked in under a second.</p></li>
+  <li><h3>Respond</h3><p>Contain the threat fast and measure how long it takes. In my machine learning lab, an attacker is blocked in under a second.</p></li>
   <li><h3>Improve</h3><p>Document what happened and tune the defenses, so the next alert is faster to handle.</p></li>
  </ol>
 </section>
@@ -339,11 +385,11 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  <h2>Toolbox, by job</h2>
  <p class="lede">Grouped by what I use each tool for.</p>
  <div class="tools">
-  <div><h3>Watch</h3><ul class="chips"><li>SIEM</li><li>IDS</li><li>Suricata</li><li>Zeek</li></ul></div>
-  <div><h3>Investigate</h3><ul class="chips"><li>Wireshark</li><li>Firewall logs</li><li>Endpoint forensics</li></ul></div>
-  <div><h3>Test</h3><ul class="chips"><li>Kali Linux</li><li>Metasploit</li><li>OpenVAS</li><li>Nmap</li></ul></div>
+  <div><h3>Watch</h3><ul class="chips"><li>SIEM</li><li>Splunk</li><li>Sysmon</li><li>IDS</li><li>Suricata</li><li>Zeek</li></ul></div>
+  <div><h3>Investigate</h3><ul class="chips"><li>Wireshark</li><li>Firewall logs</li><li>Endpoint forensics</li><li>Threat hunting</li></ul></div>
+  <div><h3>Test</h3><ul class="chips"><li>Kali Linux</li><li>Metasploit</li><li>OpenVAS</li><li>Nmap</li><li>Hydra</li></ul></div>
   <div><h3>Defend</h3><ul class="chips"><li>Fortinet</li><li>Sophos</li><li>pfSense</li></ul></div>
-  <div><h3>Automate</h3><ul class="chips"><li>Python</li><li>Scapy</li><li>SQL</li><li>Linux</li></ul></div>
+  <div><h3>Automate</h3><ul class="chips"><li>Python</li><li>Scapy</li><li>SQL</li><li>Linux</li><li>Shuffle SOAR</li></ul></div>
  </div>
 </section>
 
@@ -411,6 +457,10 @@ footer.site{margin-top:80px;padding:28px 0;border-top:1px solid var(--line);colo
  </div>
  <p class="facts">Languages: Arabic (native), English (proficient).</p>
 </section>
+<dialog class="viewer" id="viewer" aria-label="Enlarged project diagram">
+  <div class="viewer-bar"><span id="viewer-title">Diagram</span><button class="viewer-close" type="button" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="viewer-body"><img id="viewer-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" width="2560" height="1280"></div>
+ </dialog>
 </main>
 <footer class="site"><div class="wrap foot"><span>&copy; 2026 Ahmed Mostafa Hussein<span class="loc">. Cairo, Egypt.</span></span><a href="#top">Back to top</a></div></footer>
 <script>var mn=document.querySelector(".menu");document.querySelectorAll(".menu a").forEach(function(a){a.addEventListener("click",function(){setTimeout(function(){mn.removeAttribute("open")},160)})});mn.addEventListener("click",function(e){if(e.target===mn)mn.removeAttribute("open")});document.addEventListener("keydown",function(e){if(e.key==="Escape")mn.removeAttribute("open")})</script>
@@ -419,12 +469,12 @@ function cur(){return r.getAttribute("data-theme")||(mq.matches?"dark":"light")}
 function sync(){var d=cur()==="dark";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#0f161c":"#f2f5f7")}
 b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()});
 if(mq.addEventListener)mq.addEventListener("change",function(){if(!r.hasAttribute("data-theme"))sync()});sync()})();</script>
-<script>(function(){var ids=["lab","approach","path","toolbox","credentials","more","contact"],links=document.querySelectorAll('nav a[href^="#"]'),t=false;
-function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+id)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
+<script>(function(){var ids=["soc-lab","lab","approach","path","toolbox","credentials","more","contact"],links=document.querySelectorAll('nav a[href^="#"]'),t=false;
+function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+(id==="lab"?"soc-lab":id))a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
 function spy(){t=false;var cur=null;ids.forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=200)cur=id});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur="contact";set(cur)}
 window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(spy)}},{passive:true});spy()})();</script>
-<script>(function(){var d=document.getElementById("viewer"),o=document.querySelector(".fig-open");if(!d||!o)return;var b=d.querySelector(".viewer-body"),h=document.documentElement;
-o.addEventListener("click",function(){if(d.showModal){d.showModal();h.style.overflow="hidden";b.scrollTop=0;b.scrollLeft=0}else{window.open("network-topology.webp","_blank")}});
+<script>(function(){var d=document.getElementById("viewer");if(!d)return;var b=d.querySelector(".viewer-body"),img=document.getElementById("viewer-img"),t=document.getElementById("viewer-title"),h=document.documentElement;
+document.querySelectorAll(".fig-open").forEach(function(o){o.addEventListener("click",function(){var src=o.getAttribute("data-full");if(d.showModal){img.src=src;img.alt=o.getAttribute("data-alt")||"";img.width=+o.getAttribute("data-w");img.height=+o.getAttribute("data-h");img.style.setProperty("--zw",(o.getAttribute("data-zoom")||o.getAttribute("data-w"))+"px");t.textContent=o.getAttribute("data-title")||"";d.showModal();h.style.overflow="hidden";b.scrollTop=0;b.scrollLeft=0}else{window.open(src,"_blank")}})});
 d.querySelector(".viewer-close").addEventListener("click",function(){d.close()});
 d.addEventListener("close",function(){h.style.overflow="";b.classList.remove("zoom")});
 b.addEventListener("click",function(){b.classList.toggle("zoom")})})();</script>
@@ -432,13 +482,14 @@ b.addEventListener("click",function(){b.classList.toggle("zoom")})})();</script>
 var els=document.querySelectorAll("main section > *:not(dialog):not(.steps):not(.tools):not(.path), .steps li, .tools > div, .path li");
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);el.classList.add("in");setTimeout(function(){el.classList.remove("rv","in");el.style.transitionDelay=""},1000+(parseInt(el.getAttribute("data-d"))||0))})},{rootMargin:"0px 0px -6% 0px",threshold:.06});
 els.forEach(function(el){el.classList.add("rv");if(el.matches(".steps li,.tools > div,.path li")){var d=Array.prototype.indexOf.call(el.parentElement.children,el)*80;el.style.transitionDelay=d+"ms";el.setAttribute("data-d",d)}io.observe(el)});
-var box=document.querySelector(".metrics");if(!box)return;var re=/[\d,]+(?:\.\d+)?/g;
-var items=[].map.call(box.querySelectorAll("strong"),function(el){var t=el.textContent,k=t.match(re)||[];return{el:el,t:t,parts:t.split(re),nums:k.map(function(x){return{v:parseFloat(x.replace(/,/g,"")),d:(x.split(".")[1]||"").length,g:x.indexOf(",")>-1}})}});
+var re=/[\d,]+(?:\.\d+)?/g;
 function fmt(n,p){return(n.v*p).toLocaleString("en-US",{minimumFractionDigits:n.d,maximumFractionDigits:n.d,useGrouping:n.g})}
 function frame(it,p){var s=it.parts[0];it.nums.forEach(function(n,i){s+=fmt(n,p)+it.parts[i+1]});it.el.textContent=s}
+document.querySelectorAll(".metrics").forEach(function(box){
+var items=[].map.call(box.querySelectorAll("strong"),function(el){var t=el.textContent,k=t.match(re)||[];return{el:el,t:t,parts:t.split(re),nums:k.map(function(x){return{v:parseFloat(x.replace(/,/g,"")),d:(x.split(".")[1]||"").length,g:x.indexOf(",")>-1}})}});
 items.forEach(function(it){frame(it,0)});
 var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();var t0=null,dur=1300;
 function step(ts){if(t0===null)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);items.forEach(function(it){frame(it,e)});if(p<1)requestAnimationFrame(step);else items.forEach(function(it){it.el.textContent=it.t})}
-requestAnimationFrame(step)},{threshold:.6});io2.observe(box)})();</script>
+requestAnimationFrame(step)},{threshold:.6});io2.observe(box)});})();</script>
 </body>
 </html>
