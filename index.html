@@ -202,8 +202,8 @@ nav::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%
 .brand:active .mark{transform:scale(.96)}
 .theme svg{transition:transform .4s cubic-bezier(.22,1,.36,1)}
 @keyframes swap{from{transform:rotate(-70deg) scale(.5);opacity:0}to{transform:none;opacity:1}}
-.theme.swap svg{animation:swap .5s cubic-bezier(.22,1,.36,1)}
-html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .4s ease,color .4s ease,border-color .4s ease,fill .4s ease,stroke .4s ease,box-shadow .4s ease !important}
+.theme.swap svg{animation:swap .32s cubic-bezier(.22,1,.36,1)}
+html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .22s ease,color .22s ease,border-color .22s ease,fill .22s ease,stroke .22s ease,box-shadow .22s ease !important}
 @media (hover:hover){main a:not(.btn):hover{color:var(--accent-strong);text-decoration-thickness:2px}}
 .kicker::before{content:"";display:inline-block;width:20px;height:1px;background:currentColor;margin-right:10px;vertical-align:middle;opacity:.7}
 .open i{position:relative}
@@ -525,7 +525,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
 <script>(function(){var r=document.documentElement,b=document.querySelector(".theme"),mq=window.matchMedia("(prefers-color-scheme:dark)");
 function cur(){return r.getAttribute("data-theme")||(mq.matches?"dark":"light")}
 function sync(){var d=cur()==="dark";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#0c131a":"#f6f8fa")}
-b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.classList.add("theme-fade");b.classList.add("swap");setTimeout(function(){r.classList.remove("theme-fade");b.classList.remove("swap")},520);r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()});
+b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.classList.add("theme-fade");b.classList.add("swap");setTimeout(function(){r.classList.remove("theme-fade");b.classList.remove("swap")},360);r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}sync()});
 if(mq.addEventListener)mq.addEventListener("change",function(){if(!r.hasAttribute("data-theme"))sync()});sync()})();</script>
 <script>(function(){var ids=["soc-lab","lab","approach","path","toolbox","credentials","more","contact"],links=document.querySelectorAll('nav a[href^="#"]'),t=false;
 function set(id){links.forEach(function(a){if(id&&a.getAttribute("href")==="#"+(id==="lab"?"soc-lab":id))a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
