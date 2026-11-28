@@ -71,7 +71,8 @@ h1,h2,.hero p,.lede{text-wrap:balance}
 @media (prefers-color-scheme:dark){:root:not([data-theme]) .theme .i-sun{display:block}:root:not([data-theme]) .theme .i-moon{display:none}}
 .ic{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-right:8px;vertical-align:-3px;flex:none}
 .nw{white-space:nowrap}
-.ext .nw::after,.certs a::after{content:"";display:inline-block;width:12px;height:12px;margin-left:5px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.ext .nw::after,.certs a::after,.plist a::after,.path a::after{content:"";display:inline-block;width:12px;height:12px;margin-left:5px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat}
 .menu{display:none}
 .photo{width:100%;max-width:340px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:16px;border:0;justify-self:end;align-self:center;display:block;box-shadow:0 0 0 8px var(--bg),0 0 0 9px var(--line-strong),0 30px 60px -30px rgba(var(--shadow),.65)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -143,7 +144,7 @@ h1,h2,.hero p,.lede{text-wrap:balance}
 .grp summary span{margin-left:auto;color:var(--mute);font-weight:400;font-size:14px}
 .plist{list-style:none;margin:0;padding:0 20px 8px}
 .plist li{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
-.plist a{font-weight:500;overflow-wrap:anywhere}
+.plist a{font-weight:500;overflow-wrap:break-word}
 .plist span{color:var(--mute);font-size:15px}
 .certs li{grid-template-columns:1fr 90px 84px;align-items:baseline}
 .certs a{white-space:nowrap;font-size:15px;line-height:1.4}
@@ -321,7 +322,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
   <p>I'm looking to join a SOC team where I can turn alerts into clear, documented decisions.</p>
   <div class="btns">
    <a class="btn main" href="#soc-lab"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>See my labs</a>
-   <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV</a>
+   <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV<span class="sr"> (opens in a new tab)</span></a>
    <a class="btn" href="#contact"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>Contact</a>
   </div>
   <div class="facts"><span class="nw">Cairo, Egypt.</span> <span class="nw">Computer Science graduate, 2026.</span></div>
@@ -364,7 +365,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
   <li><span>Log Clearing Detected (Event 1102)<small>Defense Evasion: Clear Windows Event Logs</small></span><em>T1070.001</em></li>
  </ul></details>
  <ul class="chips"><li>Splunk</li><li>Sysmon</li><li>Active Directory</li><li>pfSense</li><li>Microsoft Azure</li><li>Shuffle SOAR</li><li>Docker</li><li>Kali Linux</li><li>Hydra</li><li>Nmap</li><li>MITRE ATT&amp;CK</li><li>VirusTotal</li></ul>
- <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/SOC-SIEM-SOAR-HomeLab">Read the full write-up and code on <span class="nw">GitHub</span></a></p>
+ <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/SOC-SIEM-SOAR-HomeLab" target="_blank" rel="noopener">Read the full write-up and code on <span class="nw">GitHub</span><span class="sr"> (opens in a new tab)</span></a></p>
 </section>
 
 <section id="lab">
@@ -412,7 +413,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  </div>
  <p class="note">How it was tested: the classifier was evaluated on 8 attack categories, and the full system faced 240 live attacks in my own lab network, using real attack tools.</p>
  <ul class="chips"><li>Python</li><li>XGBoost</li><li>Scikit-learn</li><li>Scapy</li><li>Suricata</li><li>Zeek</li><li>pfSense</li><li>GNS3</li><li>VMware</li><li>Cisco IOS</li></ul>
- <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab">Read the full write-up and code on <span class="nw">GitHub</span></a></p>
+ <p style="margin-top:20px"><a class="ext" href="https://github.com/ahhmedmostafaa/AI_Powered_Cybersecurity_Lab" target="_blank" rel="noopener">Read the full write-up and code on <span class="nw">GitHub</span><span class="sr"> (opens in a new tab)</span></a></p>
 </section>
 
 <section id="approach">
@@ -431,8 +432,8 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  <p class="lede">I started with networking, moved into security, and then into SOC work.</p>
  <ol class="path">
   <li><b>2022</b><p>Started my B.Sc. in Computer Science at Modern Academy, Cairo.</p></li>
-  <li><b>2023</b><p>Learned networking first: CCNA training at <a href="https://www.linkedin.com/company/itgateacademy/">IT Gate Academy</a>, with VLANs, OSPF and Packet Tracer labs.</p></li>
-  <li><b>2024</b><p>Moved into security with a firewall internship at <a href="https://www.linkedin.com/company/itgateacademy/">IT Gate Academy</a>: Fortinet and Sophos policies, NAT rules and VPN tunnels, plus firewall log reviews to spot unauthorized access.</p></li>
+  <li><b>2023</b><p>Learned networking first: CCNA training at <a href="https://www.linkedin.com/company/itgateacademy/" target="_blank" rel="noopener">IT Gate Academy<span class="sr"> (opens in a new tab)</span></a>, with VLANs, OSPF and Packet Tracer labs.</p></li>
+  <li><b>2024</b><p>Moved into security with a firewall internship at <a href="https://www.linkedin.com/company/itgateacademy/" target="_blank" rel="noopener">IT Gate Academy<span class="sr"> (opens in a new tab)</span></a>: Fortinet and Sophos policies, NAT rules and VPN tunnels, plus firewall log reviews to spot unauthorized access.</p></li>
   <li><b>2025</b><p>Added structured training: Google Cybersecurity, IBM ethical hacking, and Cisco security credentials.</p></li>
   <li><b>2026</b><p>Graduated in Computer Science and completed hands-on training in SOC operations and threat investigation.</p></li>
  </ol>
@@ -454,29 +455,29 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  <h2>Credentials</h2>
  <p class="lede">15 certificates, each with a link to check it. Open a group to see them.</p>
  <details class="grp"><summary>SOC and blue team <span>7</span></summary><ul class="plist certs">
-  <li><span>SIEM Engineer Career Path<small>LetsDefend</small></span><em>Aug 2026</em><a href="https://app.letsdefend.io/certificate/show/ca848ba2-d720-4986-8bb6-36aaf57e6173">Verify</a></li>
-  <li><span>SOC Analyst Learning Path<small>LetsDefend</small></span><em>Aug 2026</em><a href="https://app.letsdefend.io//certificate/show/5f3e589a-b375-42b9-a256-f510c67b4900">Verify</a></li>
-  <li><span>Cybersecurity Defense Analyst Career Path<small>Cisco Networking Academy</small></span><em>May 2026</em><a href="https://www.credly.com/badges/36ce68e8-ccb1-4dd1-9b25-990767a2e49c/public_url">Verify</a></li>
-  <li><span>Advanced Endpoint Investigations<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-L2RJXZAWTZ">Verify</a></li>
-  <li><span>SOC Level 2<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-F8ORM8AM42">Verify</a></li>
-  <li><span>SOC Level 1<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-9YYGBKQJRH">Verify</a></li>
-  <li><span>Junior Cybersecurity Analyst Career Path<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/594f0665-8e90-4d9a-b1c7-117a8fb3669d/public_url">Verify</a></li>
+  <li><span>SIEM Engineer Career Path<small>LetsDefend</small></span><em>Aug 2026</em><a href="https://app.letsdefend.io/certificate/show/ca848ba2-d720-4986-8bb6-36aaf57e6173" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>SOC Analyst Learning Path<small>LetsDefend</small></span><em>Aug 2026</em><a href="https://app.letsdefend.io//certificate/show/5f3e589a-b375-42b9-a256-f510c67b4900" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Cybersecurity Defense Analyst Career Path<small>Cisco Networking Academy</small></span><em>May 2026</em><a href="https://www.credly.com/badges/36ce68e8-ccb1-4dd1-9b25-990767a2e49c/public_url" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Advanced Endpoint Investigations<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-L2RJXZAWTZ" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>SOC Level 2<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-F8ORM8AM42" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>SOC Level 1<small>TryHackMe</small></span><em>Apr 2026</em><a href="https://tryhackme.com/certificate/THM-9YYGBKQJRH" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Junior Cybersecurity Analyst Career Path<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/594f0665-8e90-4d9a-b1c7-117a8fb3669d/public_url" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
  </ul></details>
  <details class="grp"><summary>Cisco defense <span>3</span></summary><ul class="plist certs">
-  <li><span>Cyber Threat Management<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/9e498662-28ca-4dea-8b04-efb3036081a0">Verify</a></li>
-  <li><span>Endpoint Security<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/284d10cc-0aee-4233-a1a5-7c79e8979273">Verify</a></li>
-  <li><span>Network Defense<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/5c632674-58a0-4408-89c2-14c7de02e6de">Verify</a></li>
+  <li><span>Cyber Threat Management<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/9e498662-28ca-4dea-8b04-efb3036081a0" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Endpoint Security<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/284d10cc-0aee-4233-a1a5-7c79e8979273" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Network Defense<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/5c632674-58a0-4408-89c2-14c7de02e6de" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
  </ul></details>
  <details class="grp"><summary>Ethical hacking <span>2</span></summary><ul class="plist certs">
-  <li><span>Ethical Hacking with Open Source Tools<small>IBM / Coursera</small></span><em>Oct 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/1852H9CKY6V4">Verify</a></li>
-  <li><span>Ethical Hacker<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/c7c2f365-64bb-4826-9d46-55ed0864a469">Verify</a></li>
+  <li><span>Ethical Hacking with Open Source Tools<small>IBM / Coursera</small></span><em>Oct 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/1852H9CKY6V4" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Ethical Hacker<small>Cisco Networking Academy</small></span><em>Oct 2025</em><a href="https://www.credly.com/badges/c7c2f365-64bb-4826-9d46-55ed0864a469" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
  </ul></details>
  <details class="grp"><summary>AI security <span>1</span></summary><ul class="plist certs">
-  <li><span>AI Security Mastery: From Attacks to Defenses<small>Mahara Tech</small></span><em>Mar 2026</em><a href="https://drive.google.com/file/d/1znNrweCBM7vpxW0fRJ103sv5uII6CRSu/view?usp=sharing">View</a></li>
+  <li><span>AI Security Mastery: From Attacks to Defenses<small>Mahara Tech</small></span><em>Mar 2026</em><a href="https://drive.google.com/file/d/1znNrweCBM7vpxW0fRJ103sv5uII6CRSu/view?usp=sharing" target="_blank" rel="noopener">View<span class="sr"> (opens in a new tab)</span></a></li>
  </ul></details>
  <details class="grp"><summary>Foundations <span>2</span></summary><ul class="plist certs">
-  <li><span>Network Support and Security<small>Cisco Networking Academy</small></span><em>Oct 2026</em><a href="https://www.credly.com/badges/2b4214a7-073e-477d-aeb8-d48388d21f59/public_url">Verify</a></li>
-  <li><span>Google Cybersecurity<small>Google / Coursera</small></span><em>Sep 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/YCCOMYTPOUQS">Verify</a></li>
+  <li><span>Network Support and Security<small>Cisco Networking Academy</small></span><em>Oct 2026</em><a href="https://www.credly.com/badges/2b4214a7-073e-477d-aeb8-d48388d21f59/public_url" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
+  <li><span>Google Cybersecurity<small>Google / Coursera</small></span><em>Sep 2025</em><a href="https://www.coursera.org/account/accomplishments/specialization/YCCOMYTPOUQS" target="_blank" rel="noopener">Verify<span class="sr"> (opens in a new tab)</span></a></li>
  </ul></details>
 </section>
 
@@ -484,23 +485,23 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  <h2>Beyond security</h2>
  <p class="lede">Selected work from my GitHub across networking, machine learning, embedded systems and software.</p>
  <details class="grp"><summary>Networking foundations <span>3</span></summary><ul class="plist">
-  <li><a href="https://github.com/ahhmedmostafaa/Network-Multi-Protocol-Routing">Network-Multi-Protocol-Routing</a><span>Three routing protocols (OSPF, RIP, EIGRP) working together through redistribution.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Campus-Network-EtherChannel">Campus-Network-EtherChannel</a><span>Department VLANs, redundant EtherChannel links and port security.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Wireless-Campus-Network">Wireless-Campus-Network</a><span>A multi-floor wireless design with WPA2 and one SSID per floor.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Network-Multi-Protocol-Routing" target="_blank" rel="noopener">Network-Multi-Protocol-Routing<span class="sr"> (opens in a new tab)</span></a><span>Three routing protocols (OSPF, RIP, EIGRP) working together through redistribution.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Campus-Network-EtherChannel" target="_blank" rel="noopener">Campus-Network-EtherChannel<span class="sr"> (opens in a new tab)</span></a><span>Department VLANs, redundant EtherChannel links and port security.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Wireless-Campus-Network" target="_blank" rel="noopener">Wireless-Campus-Network<span class="sr"> (opens in a new tab)</span></a><span>A multi-floor wireless design with WPA2 and one SSID per floor.</span></li>
  </ul></details>
  <details class="grp"><summary>Machine learning <span>3</span></summary><ul class="plist">
-  <li><a href="https://github.com/ahhmedmostafaa/ML-California-Housing-Comparison">ML-California-Housing-Comparison</a><span>Six algorithms written from scratch, then benchmarked against scikit-learn.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/NLP-Text-Summarization">NLP-Text-Summarization</a><span>TF-IDF summaries of CNN/Daily Mail articles.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Speech-Processing-Emotion-Transcription">Speech-Processing-Emotion-Transcription</a><span>Wav2Vec2 transcription plus emotion recognition with MFCC features and an SVM.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/ML-California-Housing-Comparison" target="_blank" rel="noopener">ML-California-Housing-Comparison<span class="sr"> (opens in a new tab)</span></a><span>Six algorithms written from scratch, then benchmarked against scikit-learn.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/NLP-Text-Summarization" target="_blank" rel="noopener">NLP-Text-Summarization<span class="sr"> (opens in a new tab)</span></a><span>TF-IDF summaries of CNN/Daily Mail articles.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Speech-Processing-Emotion-Transcription" target="_blank" rel="noopener">Speech-Processing-Emotion-Transcription<span class="sr"> (opens in a new tab)</span></a><span>Wav2Vec2 transcription plus emotion recognition with MFCC features and an SVM.</span></li>
  </ul></details>
  <details class="grp"><summary>Embedded systems &amp; software <span>5</span></summary><ul class="plist">
-  <li><a href="https://github.com/ahhmedmostafaa/IoT-Wifi-RC-Car">IoT-Wifi-RC-Car</a><span>A WiFi and Bluetooth controlled car that senses obstacles.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Embedded-Arduino-Project">Embedded-Arduino-Project</a><span>A smart door with an ultrasonic sensor, a servo, and WiFi through an ESP8266.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Banking-App-Flutter">Banking-App-Flutter</a><span>A cross-platform mobile banking interface built with Flutter.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Airline-Reservation-System">Airline-Reservation-System</a><span>A Java Swing app backed by a SQL database.</span></li>
-  <li><a href="https://github.com/ahhmedmostafaa/Bird-Game-Unity">Bird-Game-Unity</a><span>A Flappy Bird-style 2D game in Unity and C#.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/IoT-Wifi-RC-Car" target="_blank" rel="noopener">IoT-Wifi-RC-Car<span class="sr"> (opens in a new tab)</span></a><span>A WiFi and Bluetooth controlled car that senses obstacles.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Embedded-Arduino-Project" target="_blank" rel="noopener">Embedded-Arduino-Project<span class="sr"> (opens in a new tab)</span></a><span>A smart door with an ultrasonic sensor, a servo, and WiFi through an ESP8266.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Banking-App-Flutter" target="_blank" rel="noopener">Banking-App-Flutter<span class="sr"> (opens in a new tab)</span></a><span>A cross-platform mobile banking interface built with Flutter.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Airline-Reservation-System" target="_blank" rel="noopener">Airline-Reservation-System<span class="sr"> (opens in a new tab)</span></a><span>A Java Swing app backed by a SQL database.</span></li>
+  <li><a href="https://github.com/ahhmedmostafaa/Bird-Game-Unity" target="_blank" rel="noopener">Bird-Game-Unity<span class="sr"> (opens in a new tab)</span></a><span>A Flappy Bird-style 2D game in Unity and C#.</span></li>
  </ul></details>
- <p><a class="ext" href="https://github.com/ahhmedmostafaa?tab=repositories">See every repository on <span class="nw">GitHub</span></a></p>
+ <p><a class="ext" href="https://github.com/ahhmedmostafaa?tab=repositories" target="_blank" rel="noopener">See every repository on <span class="nw">GitHub</span><span class="sr"> (opens in a new tab)</span></a></p>
 </section>
 
 <section id="contact">
@@ -508,9 +509,9 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
  <p>I'm open to work as an entry-level SOC Analyst. Email is the best way to reach me.</p>
  <div class="contact">
   <a class="btn main" href="mailto:a7medmostafa7777@gmail.com"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>a7medmostafa7777@gmail.com</a>
-  <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-  <a class="btn" href="https://github.com/ahhmedmostafaa"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
-  <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV</a>
+  <a class="btn" href="https://www.linkedin.com/in/ahmedmostafahussein" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn<span class="sr"> (opens in a new tab)</span></a>
+  <a class="btn" href="https://github.com/ahhmedmostafaa" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub<span class="sr"> (opens in a new tab)</span></a>
+  <a class="btn" href="Ahmed_Hussein_CV.pdf" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Download CV<span class="sr"> (opens in a new tab)</span></a>
  </div>
  <p class="facts">Languages: Arabic (native), English (proficient).</p>
 </section>
